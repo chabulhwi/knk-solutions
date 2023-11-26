@@ -29,5 +29,5 @@ answer = (3 * q - p * p) / 3;
 
 ## Exercise 10
 
-We should leave space between `int` and `main`, between `int` and `height`, and
-between `return` and `0`.
+We should leave space between `int` and `main`, `int` and `height`, and `return`
+and `0`.
