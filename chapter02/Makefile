@@ -1,2 +1,5 @@
+CC = gcc
+CFLAGS = -O -Wall -Wextra -Wpedantic -std=c2x
+
 %.c:
-	$(CC) -O -Wall -Wextra -Wpedantic -std=c2x -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
