@@ -1,2 +1,2 @@
 %.c:
-	$(CC) -O -Wall -Wextra -Wpedantic -ansi -std=c2x -c $< -o $@
+	$(CC) -O -Wall -Wextra -Wpedantic -std=c2x -c $< -o $@
