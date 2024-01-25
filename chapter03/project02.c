@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int item_number;
 	float unit_price;
 	int month, day, year;

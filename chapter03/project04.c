@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int area_code, central_office_code, line_number;
 
 	printf("Enter phone number [ (xxx) xxx-xxxx]: ");

@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int amount;
 
 	printf("Enter a dollar amount: ");

@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	float loan, interest_rate, monthly_interest_rate, monthly_payment,
 		balance;
 

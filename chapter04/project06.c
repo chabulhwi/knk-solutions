@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, first_sum,
 		second_sum, total;
 

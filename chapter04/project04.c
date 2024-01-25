@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int n, n1, n2, n3, n4, n5;
 
 	printf("Enter a number between 0 and 32767: ");

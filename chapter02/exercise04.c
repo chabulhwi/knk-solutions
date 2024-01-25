@@ -5,7 +5,8 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int i, j, k;
 	float x, y, z;
 

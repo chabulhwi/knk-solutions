@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int i11, i12, i13, i14;
 	int i21, i22, i23, i24;
 	int i31, i32, i33, i34;

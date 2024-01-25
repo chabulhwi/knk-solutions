@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	int gs1_prefix, group_identifier, publisher_code, item_number,
 		check_digit;
 

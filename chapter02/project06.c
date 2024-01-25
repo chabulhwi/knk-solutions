@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	float x, polynomial;
 
 	printf("Enter a value for a variable x: ");

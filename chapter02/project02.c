@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	float radius = 10, volume;
 
 	volume = (4.0f / 3.0f) * 3.14159f * radius * radius * radius;

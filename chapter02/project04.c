@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	float amount, amount_with_tax;
 
 	printf("Enter an amount: ");

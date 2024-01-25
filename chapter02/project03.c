@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 	float radius, volume;
 
 	printf("Enter a radius in meters: ");
