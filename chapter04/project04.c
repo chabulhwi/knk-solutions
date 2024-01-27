@@ -7,9 +7,15 @@ int main(void)
 	printf("Enter a number between 0 and 32767: ");
 	scanf("%5d", &n);
 
-	n5 = n % 8; n /= 8;
-	n4 = n % 8; n /= 8;
-	n3 = n % 8; n /= 8;
+	n5 = n % 8;
+	n /= 8;
+
+	n4 = n % 8;
+	n /= 8;
+
+	n3 = n % 8;
+	n /= 8;
+
 	n2 = n % 8;
 	n1 = n / 8;
 

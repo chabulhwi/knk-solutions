@@ -18,18 +18,15 @@ int main(void)
 
 	balance = (1.0f + monthly_interest_rate / 100.0f) * loan -
 		monthly_payment;
-	printf("Balance remaining after first payment: $%.2f\n",
-	       balance);
+	printf("Balance remaining after first payment: $%.2f\n", balance);
 
 	balance = (1.0f + monthly_interest_rate / 100.0f) * balance -
 		monthly_payment;
-	printf("Balance remaining after second payment: $%.2f\n",
-	       balance);
+	printf("Balance remaining after second payment: $%.2f\n", balance);
 
 	balance = (1.0f + monthly_interest_rate / 100.0f) * balance -
 		monthly_payment;
-	printf("Balance remaining after third payment: $%.2f\n",
-	       balance);
+	printf("Balance remaining after third payment: $%.2f\n", balance);
 
 	return 0;
 }
