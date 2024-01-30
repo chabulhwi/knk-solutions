@@ -1,1 +1,1 @@
-find . \( -name "*.c" -o -name "*.md" \) -exec aspell check {} \;
+find . \( -name "*.md" -o -name "*.c" \) -exec aspell check {} \;
