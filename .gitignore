@@ -1,4 +1,5 @@
 exercise[0-9][0-9]
 project[0-9][0-9]
 *~
+*.bak
 *.html
