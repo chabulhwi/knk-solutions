@@ -5,7 +5,7 @@ int main(void)
 	int n;
 
 	printf("Enter a positive two-digit number: ");
-	scanf("%2d", &n);
+	scanf("%d", &n);
 
 	if (n < 10 || n >= 100) {
 		printf("This number is invalid.\n");
