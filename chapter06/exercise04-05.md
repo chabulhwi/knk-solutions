@@ -1,4 +1,4 @@
-# Chapter 6, Exercises 4, 5
+# Chapter 6, Exercises 4-5
 
 ## Exercise 4
 
