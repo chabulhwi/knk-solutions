@@ -17,10 +17,10 @@ int main(void)
 		printf("The two dates are the same\n");
 	else if (year1 < year2 || (year1 == year2 && month1 < month2) ||
 		 (year1 == year2 && month1 == month2 && day1 < day2))
-		printf("%d/%d/%.2d is earlier than %d/%d/%.2d\n",
+		printf("%d/%d/%.4d is earlier than %d/%d/%.4d\n",
 		       month1, day1, year1, month2, day2, year2);
 	else
-		printf("%d/%d/%.2d is earlier than %d/%d/%.2d\n",
+		printf("%d/%d/%.4d is earlier than %d/%d/%.4d\n",
 		       month2, day2, year2, month1, day1, year1);
 
 	return 0;
