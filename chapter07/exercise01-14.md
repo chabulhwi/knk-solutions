@@ -74,7 +74,7 @@ Therefore, (b) is also legal if you use C23.
 \(c\) `6.5`, `float` \
 \(d\) `3.75`, `double` \
 \(e\) `-1.0`, `double` \
-\(f\) `6`, `int` \
+\(f\) `6`, `int`
 
 ## Exercise 14
 
