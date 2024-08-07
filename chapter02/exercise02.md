@@ -2,8 +2,8 @@
 
 ## (a)
 
-* directive: line 1
-* statements: lines 5-8
+* Directive: line 1
+* Statements: lines 5-8
 
 ## (b)
 
