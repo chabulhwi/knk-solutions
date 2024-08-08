@@ -79,4 +79,4 @@ Therefore, (b) is also legal if you use C23.
 ## Exercise 14
 
 No. The computed result will be incorrect if the value of `f` is too large or
-too small for the `int` type to represent the integer part of `f`.
+too small for `int` to represent the integer part of `f`.
