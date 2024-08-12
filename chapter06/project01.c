@@ -2,9 +2,9 @@
 
 int main(void)
 {
-	float n, max;
+	float n, max = .0f;
 
-	for (max = 0.0f;;) {
+	while (1) {
 		printf("Enter a nonnegative number: ");
 		scanf("%f", &n);
 
