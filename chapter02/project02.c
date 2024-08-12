@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	float radius = 10, volume;
+	float radius = 10.0f, volume;
 
 	volume = (4.0f / 3.0f) * 3.14159f * radius * radius * radius;
 
