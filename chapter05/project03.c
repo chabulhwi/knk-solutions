@@ -33,7 +33,7 @@ int main(void)
 
 	printf("The original broker's commission: $%.2f\n", commission);
 
-	if (share < 2000)
+	if (share < 2000.00f)
 		rival_commission = 33.00f + .03f * share;
 	else
 		rival_commission = 33.00f + .02f * share;
