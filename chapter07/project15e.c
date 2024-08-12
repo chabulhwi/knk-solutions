@@ -18,7 +18,7 @@ int main(void)
 	 * 34 is the largest value of n for which the program correctly prints
 	 * the factorial of n.
 	 */
-	printf("Factorial of %.0f: %.6g\n", n, fact);
+	printf("Factorial of %.6g: %.6g\n", n, fact);
 
 	return 0;
 }
