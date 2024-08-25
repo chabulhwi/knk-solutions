@@ -4,9 +4,7 @@
 
 int main(void)
 {
-	int i;
-
-	for (i = 9384;;) {
+	for (int i = 9384;;) {
 		printf("%d ", i);
 		i /= 10;
 		if (i == 0)
