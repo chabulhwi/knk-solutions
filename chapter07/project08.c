@@ -29,7 +29,7 @@ int main(void)
 	ch1 = toupper(ch1);
 	ch2 = toupper(ch2);
 
-	if (h < 0 || h > 12 || min < 0 || min > 60 ||
+	if (h < 0 || h > 12 || min < 0 || min >= 60 ||
 	    (ch1 != 'A' && ch1 != 'P') || (ch2 != '\n' && ch2 != 'M')) {
 		printf("Illegal time\n");
 	} else {
