@@ -41,7 +41,7 @@ int main(void)
 
 		printf("%-8d $%.2f\n", i, balance);
 
-		if (balance <= .0f)
+		if (balance == .0f)
 			break;
 	}
 
