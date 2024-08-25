@@ -37,7 +37,7 @@ option. Since this option is the default, I don't have to explicitly specify it.
 ### Contributing
 
 If you've found errors in my solutions and want to fix them, please send an
-email to <~chabulhwi/public-inbox@lists.sr.ht>. This is my [public inbox][inbox]
+email to <~chabulhwi/public-inbox@lists.sr.ht>. It's my [public inbox][inbox]
 showing patches, questions, and discussions for any of my projects that don't
 have their own mailing list.
 
