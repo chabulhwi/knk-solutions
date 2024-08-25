@@ -17,9 +17,9 @@ int main(void)
 		printf("Illegal time\n");
 	} else {
 		if (h == 12 && ch1 == 'A')
-			time = 0;
+			time = min;
 		else if (h == 12 && ch1 == 'P')
-			time = 60 * 12;
+			time = 60 * 12 + min;
 		else if (ch1 == 'A')	// 0 <= h && h < 12
 			time = 60 * h + min;
 		else		// ch1 == 'P' && 0 <= h && h < 12
