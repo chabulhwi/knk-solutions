@@ -13,7 +13,7 @@ int main(void)
 		printf("%d isn't prime\n", n);
 	} else {
 		/* modified loop */
-		for (d = 2; d * d <= n; d++) {
+		for (d = 2; d * d < n; d++) {
 			if (n % d == 0)
 				break;
 		}
