@@ -34,6 +34,14 @@ the `-ci4` option because I want to indent the second line by a tab instead.
 The default style of indentation is to use tabs, which is specified by the `-ut`
 option. Since this option is the default, I don't have to explicitly specify it.
 
+### Contributing
+
+If you've found errors in my solutions and want to fix them, please send an
+email to <~chabulhwi/public-inbox@lists.sr.ht>. This is my [public inbox][inbox]
+showing patches, questions, and discussions for any of my projects that don't
+have their own mailing list.
+
 [c]: http://knking.com/books/c2/index.html
 [knk]: http://knking.com/index.html
 [linux]: https://www.kernel.org/doc/html/latest/process/coding-style.html
+[inbox]: https://lists.sr.ht/~chabulhwi/public-inbox
