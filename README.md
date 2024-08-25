@@ -34,7 +34,7 @@ the `-ci4` option because I want to indent the second line by a tab instead.
 The default style of indentation is to use tabs, which is specified by the `-ut`
 option. Since this option is the default, I don't have to explicitly specify it.
 
-### Contributing
+## Contributing
 
 If you've found errors in my solutions and want to fix them, please send an
 email to <~chabulhwi/public-inbox@lists.sr.ht>. It's my [public inbox][inbox]
