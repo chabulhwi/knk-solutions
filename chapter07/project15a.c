@@ -15,8 +15,8 @@ int main(void)
 		fact *= num;
 
 	/*
-	 * 7 is the largest value of n for which the program correctly prints
-	 * the factorial of n.
+	 * On my computer, 7 is the largest value of n for which the program
+	 * correctly prints the factorial of n.
 	 */
 	printf("Factorial of %hd: %hd\n", n, fact);
 
