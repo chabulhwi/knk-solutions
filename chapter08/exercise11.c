@@ -6,10 +6,8 @@ int main(void)
 
 	for (int row = 0; row < 8; row++) {
 		for (int column = 0; column < 8; column++) {
-			if ((row + column) % 2 == 0)
-				checker_board[row][column] = 'B';
-			else
-				checker_board[row][column] = 'R';
+			checker_board[row][column] = (row + column) % 2 == 0 ?
+				'B' : 'R';
 
 			printf("%c", checker_board[row][column]);
 
