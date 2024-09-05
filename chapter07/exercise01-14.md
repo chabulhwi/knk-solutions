@@ -10,8 +10,8 @@
 
 \(a\) Floating-point \
 \(b\) Floating-point \
-\(c\) Illegal ('9' is an invalid digit in octal constants) \
-\(d\) Illegal ('_' is invalid in integer constants) \
+\(c\) Illegal (`'9'` is an invalid digit in octal constants) \
+\(d\) Illegal (`'_'` is invalid in integer constants) \
 \(e\) Floating-point
 
 ## Exercise 3
