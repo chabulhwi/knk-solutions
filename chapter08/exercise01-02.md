@@ -17,13 +17,13 @@ int digit_count[10];
 
 However, we can't use digits in character form to subscript `digit_count`
 directly, because their integer values don't fall between 0 and 9. To scale a
-digit to the proper range, we can simply subtract `'0'`. For example, if `ch`
+digit to the proper range, we can simply subtract `'0'`. For example, if `d`
 contains a digit in character form, we'd write
 
 ```c
-digit_count[ch - '0'] = 0;
+digit_count[d - '0'] = 0;
 ```
 
-to clear the count that corresponds to `ch`. A minor caveat: this technique
+to clear the count that corresponds to `d`. A minor caveat: this technique
 isn't completely portable, because it assumes that digits have consecutive
 codes. However, it works with most character sets, including ASCII.
