@@ -94,5 +94,4 @@ int main(void)
  error:
 	printf("The program has errors.\n");
 	return 1;
-
 }
