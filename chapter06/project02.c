@@ -4,8 +4,10 @@ int main(void)
 {
 	int m, n, r, gcd;
 
-	printf("Enter two integers: ");
-	scanf("%d%d", &m, &n);
+	do {
+		printf("Enter two nonzero integers: ");
+		scanf("%d%d", &m, &n);
+	} while (m == 0 || n == 0);
 
 	while (n != 0) {
 		r = m % n;
