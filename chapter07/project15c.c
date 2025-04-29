@@ -11,7 +11,7 @@ int main(void)
 		scanf("%ld", &n);
 	} while (n < 0);
 
-	for (num = n; num >= 1; num--)
+	for (num = n; num > 1; num--)
 		fact *= num;
 
 	/*
