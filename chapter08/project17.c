@@ -92,6 +92,6 @@ int main(void)
 	return 0;
 
  error:
-	printf("The program has errors.\n");
+	printf("The program has created an incorrect magic square.\n");
 	return 1;
 }
