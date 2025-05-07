@@ -91,7 +91,7 @@ int main(void)
 
 	return 0;
 
- error:
+error:
 	printf("The program has errors.\n");
 	return 1;
 }
