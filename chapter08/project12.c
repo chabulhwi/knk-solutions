@@ -1,7 +1,7 @@
 /* Computes the Scrabble value of a word */
 
-#include <ctype.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #define NUM_ALP 26
 

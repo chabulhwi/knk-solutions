@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #define DEPART1  8 * 60
 #define DEPART2  9 * 60 + 43
