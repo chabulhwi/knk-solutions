@@ -1,4 +1,4 @@
-# Chapter 9, Exercise 7-8
+# Chapter 9, Exercises 7-8
 
 ## Exercise 7
 
