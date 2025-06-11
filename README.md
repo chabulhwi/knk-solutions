@@ -24,7 +24,7 @@ following settings:
 ```
 -nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce -ci4
 -cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai
--saf -saw -ncs -nsc -sob -nfca -cp33 -ss -ts8 -il1
+-saf -saw -ncs -nsc -sob -nfca -cp33 -ss -ts8 -il0
 ```
 
 When a statement is broken across two lines, the second line is indented by a
@@ -33,6 +33,9 @@ the `-ci4` option because I want to indent the second line by a tab instead.
 
 The default style of indentation is to use tabs, which is specified by the `-ut`
 option. Since this option is the default, I don't have to explicitly specify it.
+
+I changed the offset at which a label (except case labels) will be positioned
+from one to zero.
 
 ## Contributing
 
