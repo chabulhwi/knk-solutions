@@ -112,7 +112,7 @@ int sum_of_line(int n, int magic_square[n][n])
 
 	return sum;
 
- error:
+error:
 	printf("The program has created an incorrect magic square.\n");
 	exit(1);
 }

@@ -91,7 +91,7 @@ int main(void)
 
 	return 0;
 
- error:
+error:
 	printf("The program has created an incorrect magic square.\n");
 	return 1;
 }

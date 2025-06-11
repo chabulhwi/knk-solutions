@@ -67,7 +67,7 @@ int main(void)
 
 	return 0;
 
- error:
+error:
 	printf("The sentence is too long.\n");
 	return 1;
 }
