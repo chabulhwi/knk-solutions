@@ -1,4 +1,11 @@
-/* NOTE: I changed the type of the parameter magic_square from char to int. */
+/*
+ * NOTE: I changed the type of the parameter magic_square from char to int.
+ *
+ * There's an error in page 217. In Programming Project 5, the element type of
+ * the magic_square parameter in the prototypes for create_magic_square and
+ * print_magic_square should be int rather than char. This error occurs in four
+ * places. (Found by Bryan Krofchok.)
+ */
 
 #include <stdio.h>
 #include <stdbool.h>
