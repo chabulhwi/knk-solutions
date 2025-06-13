@@ -48,19 +48,19 @@
 
 ## Exercise 3
 
-Let `n` be the number of the blocks that (a) are inside the `main` function and
-(b) include a declaration of a local variable `i`.
+* There can be at most one declaration of an external variable `i`.
+* There can be at most one declaration of a local variable `i` that is (a)
+  inside the body of the `main` function and (b) outside of any possible blocks
+  that are also inside the body of `main`.
+* Let `n` be the number of the blocks that (a) are inside the body of the `main`
+  function and (b) include a declaration of a local variable `i`.
 
-Let `m` be the number of the declarations of an external variable `i`.
+Then, the program could contain at least `n + 2` different variables named `i`.
 
-Then, the program could contain `m + n` different variables named `i`.
-
-For example, the following C program contains three external variables and five
+For example, the following C program contains one external variable and five
 local variables, all of which are named `i`.
 
 ```c
-int i;
-int i;
 int i;
 
 int main(void)
