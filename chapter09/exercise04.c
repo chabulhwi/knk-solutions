@@ -5,7 +5,6 @@
 #define MONTHS 12
 
 int days_of_month[MONTHS] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
 bool year_is_leap_year;
 
 int day_of_year(int month, int day, int year)
