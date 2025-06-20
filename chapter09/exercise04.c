@@ -10,7 +10,8 @@ bool year_is_leap_year;
 
 int day_of_year(int month, int day, int year)
 {
-	/* A viewer of my Chzzk stream told me how to simplify the cascaded
+	/*
+	 * A viewer of my Chzzk stream told me how to simplify the cascaded
 	 * if-else statement. Thanks!
 	 */
 	if (month < 1 || month > 12 || day < 1 || day > 31 || year < 0) {
