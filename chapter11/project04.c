@@ -1,4 +1,3 @@
-/* poker.c (Chapter 10, page 233) */
 /* Classifies a poker hand */
 
 #include <stdbool.h>		/* C99 only */
