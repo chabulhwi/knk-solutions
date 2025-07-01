@@ -15,7 +15,7 @@ int main(void)
 	double a[n];
 
 	for (int i = 0; i < n; i++) {
-		printf("Enter elemenet %d of the array: ", i);
+		printf("Enter element %d of the array: ", i);
 		scanf("%lf", &a[i]);
 	}
 
