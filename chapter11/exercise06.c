@@ -42,11 +42,11 @@ void find_two_largest(int n, int a[n], int *largest, int *second_largest)
 	for (int i = 0; i < n; i++) {
 		if (a[i] == *largest)
 			largest_count++;
-	}
 
-	if (largest_count > 1) {
-		*second_largest = *largest;
-		return;
+		if (largest_count > 1) {
+			*second_largest = *largest;
+			return;
+		}
 	}
 
 	for (int i = 0; i < n; i++) {
