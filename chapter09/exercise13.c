@@ -23,12 +23,10 @@ int main(void)
 	};
 
 	for (int i = 0; i < NUM_ROW; i++) {
-		for (int j = 0; j < NUM_COL; j++)
+		for (int j = 0; j < NUM_COL; j++) {
 			has_piece[i][j] = false;
-	}
-	for (int i = 0; i < NUM_ROW; i++) {
-		for (int j = 0; j < NUM_COL; j++)
 			board[i][j] = '.';
+		}
 	}
 
 	srand((unsigned)time(NULL));
