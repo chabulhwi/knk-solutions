@@ -33,7 +33,7 @@ int main(void)
 
 	printf("Enter the values of n and k: ");
 	scanf("%d%d", &n, &k);
-	printf("digit(%d, %d) = %d", n, k, digit(n, k));
+	printf("digit(%d, %d) = %d\n", n, k, digit(n, k));
 
 	return 0;
 }
