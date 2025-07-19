@@ -31,7 +31,7 @@ int main(void)
 
 	if (h < 0 || h > 12 || min < 0 || min >= 60 ||
 	    (ch1 != 'A' && ch1 != 'P') || (ch2 != '\n' && ch2 != 'M')) {
-		printf("Illegal time\n");
+		printf("Invalid time\n");
 	} else {
 		if (h == 12 && ch1 == 'A')
 			time = min;

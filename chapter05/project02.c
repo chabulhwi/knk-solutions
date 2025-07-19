@@ -8,7 +8,7 @@ int main(void)
 	scanf("%2d:%2d", &h, &min);
 
 	if (h < 0 || h >= 24 || min < 0 || min >= 60) {
-		printf("Illegal time\n");
+		printf("Invalid time\n");
 	} else {
 		printf("Equivalent 12-hour time: ");
 		if (h == 0)

@@ -25,7 +25,7 @@ int main(void)
 	scanf("%2d:%2d", &h, &min);
 
 	if (h < 0 || h >= 24 || min < 0 || min >= 60) {
-		printf("Illegal time\n");
+		printf("Invalid time\n");
 	} else {
 		time = 60 * h + min;
 

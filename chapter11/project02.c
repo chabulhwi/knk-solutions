@@ -25,7 +25,7 @@ int main(void)
 		if (0 <= h && h < 24 && 0 <= min && min < 60)
 			break;
 		else
-			printf("Illegal time\n");
+			printf("Invalid time\n");
 	}
 
 	desired_time = 60 * h + min;
