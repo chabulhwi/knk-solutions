@@ -189,7 +189,7 @@ void analyze_hand(int hand[static NUM_CARDS][2])
 	}
 
 	/* check for straight */
-	for (int rank = min_rank + 1; rank < min_rank + NUM_CARDS - 1; rank++) {
+	for (int rank = min_rank + 1; rank < min_rank + NUM_CARDS; rank++) {
 		if (!card_exists(hand, rank))
 			straight = false;
 	}
