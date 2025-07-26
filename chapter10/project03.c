@@ -13,6 +13,7 @@
 bool straight, flush, four, three;
 int pairs;			// can be 0, 1, or 2
 
+bool card_exists(int hand[static NUM_CARDS][2], int rank);
 void read_cards(int hand[static NUM_CARDS][2]);
 void analyze_hand(int hand[static NUM_CARDS][2]);
 void print_result(int hand[static NUM_CARDS][2]);
@@ -145,6 +146,19 @@ void read_cards(int hand[static NUM_CARDS][2])
 	}
 }
 
+/* Determines whether the hand contains a card of a specific rank. */
+bool card_exists(int hand[static NUM_CARDS][2], int rank)
+{
+	bool result = false;
+
+	for (int card = 0; card < NUM_CARDS; card++) {
+		if (hand[card][RANK] == rank)
+			result = true;
+	}
+
+	return result;
+}
+
 /*
  * Determines whether the hand contains a straight, a flush, four-of-a-kind,
  * and/or three-of-a-kind; determines the number of pairs; stores the results
@@ -152,7 +166,6 @@ void read_cards(int hand[static NUM_CARDS][2])
  */
 void analyze_hand(int hand[static NUM_CARDS][2])
 {
-	bool card_exists;
 	int min_rank, num_in_rank;
 
 	straight = true;
@@ -169,14 +182,7 @@ void analyze_hand(int hand[static NUM_CARDS][2])
 
 	/* find minimum rank */
 	for (int rank = 0; rank < NUM_RANKS; rank++) {
-		card_exists = false;
-
-		for (int card = 0; card < NUM_CARDS; card++) {
-			if (hand[card][RANK] == rank)
-				card_exists = true;
-		}
-
-		if (card_exists) {
+		if (card_exists(hand, rank)) {
 			min_rank = rank;
 			break;
 		}
@@ -184,14 +190,7 @@ void analyze_hand(int hand[static NUM_CARDS][2])
 
 	/* check for straight */
 	for (int rank = min_rank + 1; rank < min_rank + NUM_CARDS - 1; rank++) {
-		card_exists = false;
-
-		for (int card = 0; card < NUM_CARDS; card++) {
-			if (hand[card][RANK] == rank)
-				card_exists = true;
-		}
-
-		if (!card_exists)
+		if (!card_exists(hand, rank))
 			straight = false;
 	}
 
