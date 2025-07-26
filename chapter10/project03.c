@@ -13,18 +13,18 @@
 bool straight, flush, four, three;
 int pairs;			// can be 0, 1, or 2
 
-void read_cards(int num_cards, int hand[static num_cards][2]);
-void analyze_hand(int num_cards, int hand[static num_cards][2]);
-void print_result(int num_cards, int hand[static num_cards][2]);
+void read_cards(int hand[static NUM_CARDS][2]);
+void analyze_hand(int hand[static NUM_CARDS][2]);
+void print_result(int hand[static NUM_CARDS][2]);
 
 int main(void)
 {
 	int hand[NUM_CARDS][2];
 
 	while (1) {
-		read_cards(NUM_CARDS, hand);
-		analyze_hand(NUM_CARDS, hand);
-		print_result(NUM_CARDS, hand);
+		read_cards(hand);
+		analyze_hand(hand);
+		print_result(hand);
 	}
 }
 
@@ -32,7 +32,7 @@ int main(void)
  * Reads the cards into the variable hand; checks for bad cards and duplicate
  * cards.
  */
-void read_cards(int num_cards, int hand[static num_cards][2])
+void read_cards(int hand[static NUM_CARDS][2])
 {
 	bool bad_card, duplicate_cards_exist;
 	char ch, rank_ch, suit_ch;
@@ -150,7 +150,7 @@ void read_cards(int num_cards, int hand[static num_cards][2])
  * and/or three-of-a-kind; determines the number of pairs; stores the results
  * into the external variables straight, flush, four, three, and pairs.
  */
-void analyze_hand(int num_cards, int hand[static num_cards][2])
+void analyze_hand(int hand[static NUM_CARDS][2])
 {
 	bool card_exists;
 	int min_rank, num_in_rank;
@@ -167,7 +167,7 @@ void analyze_hand(int num_cards, int hand[static num_cards][2])
 			flush = false;
 	}
 
-	/* check for straight */
+	/* find minimum rank */
 	for (int rank = 0; rank < NUM_RANKS; rank++) {
 		card_exists = false;
 
@@ -182,6 +182,7 @@ void analyze_hand(int num_cards, int hand[static num_cards][2])
 		}
 	}
 
+	/* check for straight */
 	for (int rank = min_rank + 1; rank < min_rank + NUM_CARDS - 1; rank++) {
 		card_exists = false;
 
@@ -220,7 +221,7 @@ void analyze_hand(int num_cards, int hand[static num_cards][2])
  * Prints the classification of the hand, based on the values of the external
  * variables straight, flush, four, three, and pairs.
  */
-void print_result(int num_cards, int hand[static num_cards][2])
+void print_result(int hand[static NUM_CARDS][2])
 {
 	if (straight && flush)
 		printf("Straight flush");
