@@ -12,15 +12,12 @@
 bool straight, flush, four, three;
 int pairs;			// can be 0, 1, or 2
 
-void read_cards(int num_ranks, int num_suits,
-		int num_in_rank[static num_ranks],
-		int num_in_suit[static num_suits]);
-void analyze_hand(int num_ranks, int num_suits,
-		  int num_in_rank[static num_ranks],
-		  int num_in_suit[static num_suits]);
-void print_result(int num_ranks, int num_suits,
-		  int num_in_rank[static num_ranks],
-		  int num_in_suit[static num_suits]);
+void read_cards(int num_in_rank[static NUM_RANKS],
+		int num_in_suit[static NUM_SUITS]);
+void analyze_hand(int num_in_rank[static NUM_RANKS],
+		  int num_in_suit[static NUM_SUITS]);
+void print_result(int num_in_rank[static NUM_RANKS],
+		  int num_in_suit[static NUM_SUITS]);
 
 int main(void)
 {
@@ -28,9 +25,9 @@ int main(void)
 	int num_in_suit[NUM_SUITS];
 
 	while (1) {
-		read_cards(NUM_RANKS, NUM_SUITS, num_in_rank, num_in_suit);
-		analyze_hand(NUM_RANKS, NUM_SUITS, num_in_rank, num_in_suit);
-		print_result(NUM_RANKS, NUM_SUITS, num_in_rank, num_in_suit);
+		read_cards(num_in_rank, num_in_suit);
+		analyze_hand(num_in_rank, num_in_suit);
+		print_result(num_in_rank, num_in_suit);
 	}
 }
 
@@ -38,9 +35,8 @@ int main(void)
  * Reads the cards into the external variables num_in_rank and num_in_suit;
  * checks for bad cards and duplicate cards.
  */
-void read_cards(int num_ranks, int num_suits,
-		int num_in_rank[static num_ranks],
-		int num_in_suit[static num_suits])
+void read_cards(int num_in_rank[static NUM_RANKS],
+		int num_in_suit[static NUM_SUITS])
 {
 	bool card_exists[NUM_RANKS][NUM_SUITS];
 	char ch, rank_ch, suit_ch;
@@ -164,9 +160,8 @@ void read_cards(int num_ranks, int num_suits,
  * and/or three-of-a-kind; determines the number of pairs; stores the results
  * into the external variables straight, flush, four, three, and pairs.
  */
-void analyze_hand(int num_ranks, int num_suits,
-		  int num_in_rank[static num_ranks],
-		  int num_in_suit[static num_suits])
+void analyze_hand(int num_in_rank[static NUM_RANKS],
+		  int num_in_suit[static NUM_SUITS])
 {
 	int num_consec = 0;
 	int rank, suit;
@@ -210,9 +205,8 @@ void analyze_hand(int num_ranks, int num_suits,
  * Prints the classification of the hand, based on the values of the external
  * variables straight, flush, four, three, and pairs.
  */
-void print_result(int num_ranks, int num_suits,
-		  int num_in_rank[static num_ranks],
-		  int num_in_suit[static num_suits])
+void print_result(int num_in_rank[static NUM_RANKS],
+		  int num_in_suit[static NUM_SUITS])
 {
 	if (straight && flush) {
 		if (num_in_rank[NUM_RANKS - 1] > 0)
