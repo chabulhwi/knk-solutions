@@ -58,11 +58,13 @@ int main(void)
 		count_num(black_suit, NUM_SUITS, num_in_black_suit);
 		analyze_hand(black_rank, num_in_black_rank, num_in_black_suit,
 			     hand, BLACK);
+		sort_cards(black_rank, black_suit, num_in_black_rank);
 
 		count_num(white_rank, NUM_RANKS, num_in_white_rank);
 		count_num(white_suit, NUM_SUITS, num_in_white_suit);
 		analyze_hand(white_rank, num_in_white_rank, num_in_white_suit,
 			     hand, WHITE);
+		sort_cards(white_rank, white_suit, num_in_white_rank);
 
 		compare_hands(hand, black_rank, white_rank);
 		putchar('\n');
