@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 #define NUM_ALP 26
-#define LENGTH 80
+#define LENGTH 81
 
 int main(void)
 {
