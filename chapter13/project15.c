@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 #define MAX_LEN 2000
 #define STACK_SIZE 100
@@ -78,7 +79,7 @@ int evaluate_RPN_expression(const char *expression)
 {
 	int left, right;
 
-	for (int i = 0; i < MAX_LEN; i++) {
+	for (int i = 0; i < MAX_LEN && (size_t)i < strlen(expression); i++) {
 		switch (expression[i]) {
 		case '0':
 			push(0);
