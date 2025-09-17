@@ -23,19 +23,17 @@ int main(void)
 	for (int i = 0; !repeated_digit_exists && i < 10; i++)
 		repeated_digit_exists = repeat_count[i] > 1;
 
-	if (repeated_digit_exists) {
-		printf("Digit:      ");
-		for (int i = 0; i < 10; i++)
-			printf("%3d", i);
-		putchar('\n');
+	printf("Digit:      ");
+	for (int i = 0; i < 10; i++)
+		printf("%3d", i);
+	putchar('\n');
+	printf("Occurrences:");
+	for (int i = 0; i < 10; i++)
+		printf("%3d", repeat_count[i]);
+	putchar('\n');
 
-		printf("Occurrences:");
-		for (int i = 0; i < 10; i++)
-			printf("%3d", repeat_count[i]);
-		putchar('\n');
-	} else {
+	if (!repeated_digit_exists)
 		printf("No repeated digit\n");
-	}
 
 	return 0;
 }
