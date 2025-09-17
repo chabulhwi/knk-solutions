@@ -5,7 +5,7 @@
 
 int main(void)
 {
-	double score[NUM_STUDENT][NUM_QUIZ] = { 0.0 };
+	double score[NUM_STUDENT][NUM_QUIZ] = { {0.0} };
 	double student_total_score[NUM_STUDENT] = { 0.0 };
 	double quiz_total_score[NUM_QUIZ] = { 0.0 };
 	double quiz_max_score[NUM_QUIZ] = { 0.0 };
