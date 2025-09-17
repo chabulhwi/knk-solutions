@@ -9,7 +9,7 @@ int main(void)
 
 	printf("Enter three double values: ");
 	scanf("%lf%lf%lf", &x, &y, &z);
-	printf("Median: %.2f", MEDIAN(x, y, z));
+	printf("Median: %.2f\n", MEDIAN(x, y, z));
 
 	return 0;
 }

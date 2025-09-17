@@ -20,7 +20,7 @@ int main(void)
 			break;
 	}
 
-	printf("You entered the date %s %d, %d", month_name[month - 1], day,
+	printf("You entered the date %s %d, %d\n", month_name[month - 1], day,
 	       year);
 
 	return 0;

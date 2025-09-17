@@ -23,6 +23,7 @@ int main(void)
 	for (int j = 0; j < 5; j++) {
 		printf(" %d", column_total[j]);
 	}
+	putchar('\n');
 
 	return 0;
 }
