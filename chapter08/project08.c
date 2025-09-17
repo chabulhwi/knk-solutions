@@ -31,7 +31,6 @@ int main(void)
 		printf("%d\t%.1f\t%.1f\t\n", i + 1, student_total_score[i],
 		       student_total_score[i] / 5.0);
 	}
-	putchar('\n');
 
 	printf("\nQuiz\tAverage\tHigh\tlow\n");
 	for (int j = 0; j < NUM_QUIZ; j++) {
@@ -39,7 +38,6 @@ int main(void)
 		       quiz_total_score[j] / 5.0, quiz_max_score[j],
 		       quiz_min_score[j]);
 	}
-	putchar('\n');
 
 	return 0;
 }
