@@ -22,10 +22,10 @@ int main(void)
 	printf("Enter an integer: ");
 	scanf("%d", &n);
 
-	if (num_digits(n) == 1)
-		printf("%d has %d digit.\n", n, num_digits(n));
-	else
-		printf("%d has %d digits.\n", n, num_digits(n));
+	printf("%d has %d digit", n, num_digits(n));
+	if (num_digits(n) != 1)
+		putchar('s');
+	printf(".\n");
 
 	return 0;
 }
