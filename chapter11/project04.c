@@ -14,9 +14,8 @@ void read_cards(int num_ranks, int num_suits, int num_in_rank[num_ranks],
 void analyze_hand(int num_ranks, int num_suits, int num_in_rank[num_ranks],
 		  int num_in_suit[num_suits], bool *straight, bool *flush,
 		  bool *four, bool *three, int *pairs);
-void print_result(int num_ranks, int num_suits, int num_in_rank[num_ranks],
-		  int num_in_suit[num_suits], bool *straight, bool *flush,
-		  bool *four, bool *three, int *pairs);
+void print_result(bool *straight, bool *flush, bool *four, bool *three, int
+		  *pairs);
 
 /**********************************************************
  * main: Calls read_cards, analyze_hand, and print_result *
@@ -33,8 +32,7 @@ int main(void)
 		read_cards(NUM_RANKS, NUM_SUITS, num_in_rank, num_in_suit);
 		analyze_hand(NUM_RANKS, NUM_SUITS, num_in_rank, num_in_suit,
 			     &straight, &flush, &four, &three, &pairs);
-		print_result(NUM_RANKS, NUM_SUITS, num_in_rank, num_in_suit,
-			     &straight, &flush, &four, &three, &pairs);
+		print_result(&straight, &flush, &four, &three, &pairs);
 	}
 }
 
@@ -211,9 +209,8 @@ void analyze_hand(int num_ranks, int num_suits, int num_in_rank[num_ranks],
  *               variables straight, flush, four, three,  *
  *               and pairs.                               *
  **********************************************************/
-void print_result(int num_ranks, int num_suits, int num_in_rank[num_ranks],
-		  int num_in_suit[num_suits], bool *straight, bool *flush,
-		  bool *four, bool *three, int *pairs)
+void print_result(bool *straight, bool *flush, bool *four, bool *three, int
+		  *pairs)
 {
 	if (*straight && *flush)
 		printf("Straight flush");

@@ -16,7 +16,7 @@ int pairs;			// can be 0, 1, or 2
 bool card_exists(int hand[static NUM_CARDS][2], int rank);
 void read_cards(int hand[static NUM_CARDS][2]);
 void analyze_hand(int hand[static NUM_CARDS][2]);
-void print_result(int hand[static NUM_CARDS][2]);
+void print_result();
 
 int main(void)
 {
@@ -25,7 +25,7 @@ int main(void)
 	while (1) {
 		read_cards(hand);
 		analyze_hand(hand);
-		print_result(hand);
+		print_result();
 	}
 }
 
@@ -223,7 +223,7 @@ void analyze_hand(int hand[static NUM_CARDS][2])
  * Prints the classification of the hand, based on the values of the external
  * variables straight, flush, four, three, and pairs.
  */
-void print_result(int hand[static NUM_CARDS][2])
+void print_result()
 {
 	if (straight && flush)
 		printf("Straight flush");

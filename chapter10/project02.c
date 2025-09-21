@@ -16,8 +16,7 @@ void read_cards(int num_in_rank[static NUM_RANKS],
 		int num_in_suit[static NUM_SUITS]);
 void analyze_hand(int num_in_rank[static NUM_RANKS],
 		  int num_in_suit[static NUM_SUITS]);
-void print_result(int num_in_rank[static NUM_RANKS],
-		  int num_in_suit[static NUM_SUITS]);
+void print_result();
 
 int main(void)
 {
@@ -27,7 +26,7 @@ int main(void)
 	while (1) {
 		read_cards(num_in_rank, num_in_suit);
 		analyze_hand(num_in_rank, num_in_suit);
-		print_result(num_in_rank, num_in_suit);
+		print_result();
 	}
 }
 
@@ -203,8 +202,7 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
  * Prints the classification of the hand, based on the values of the external
  * variables straight, flush, four, three, and pairs.
  */
-void print_result(int num_in_rank[static NUM_RANKS],
-		  int num_in_suit[static NUM_SUITS])
+void print_result()
 {
 	if (straight && flush)
 		printf("Straight flush");
