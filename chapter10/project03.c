@@ -128,7 +128,12 @@ void read_cards(int hand[static NUM_CARDS][2])
 				/* empty loop body */ ;
 		}
 
-		hand[cards_read][RANK] = rank;
+                if (bad_card) {
+			printf("Bad card; ignored.\n");
+			continue;
+                }
+
+                hand[cards_read][RANK] = rank;
 		hand[cards_read][SUIT] = suit;
 
 		for (int card = 0; card < cards_read; card++) {
@@ -137,9 +142,7 @@ void read_cards(int hand[static NUM_CARDS][2])
 				duplicate_cards_exist = true;
 		}
 
-		if (bad_card)
-			printf("Bad card; ignored.\n");
-		else if (duplicate_cards_exist)
+		if (duplicate_cards_exist)
 			printf("Duplicate card; ignored.\n");
 		else
 			cards_read++;
