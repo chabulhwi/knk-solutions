@@ -21,7 +21,6 @@ int top = 0;
 
 int main(void)
 {
-	char ch;
 	int num;
 
 	do {
@@ -37,7 +36,6 @@ int main(void)
 			printf("NO\n");
 
 		make_empty();
-
 	}
 
 	return 0;
