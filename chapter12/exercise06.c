@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sum_array(int n, int a[]);
+int sum_array(int n, int a[n]);
 
 int main(void)
 {
