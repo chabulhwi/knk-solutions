@@ -5,7 +5,7 @@ void store_zeros(int n, int a[n]);
 
 int main(void)
 {
-	int n, key;
+	int n;
 
 	do {
 		printf("Enter the length of the array: ");
