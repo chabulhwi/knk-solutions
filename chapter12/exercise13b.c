@@ -8,7 +8,7 @@ int main(void)
 	do {
 		printf("Enter the length of the array: ");
 		scanf("%d", &n);
-	} while (n <= 0);
+	} while (n <= 0 || n > 85);
 
 	double ident[n][n];
 
