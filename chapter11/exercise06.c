@@ -2,11 +2,9 @@
 #include <stdbool.h>
 
 void find_two_largest(int n, int a[n], int *largest, int *second_largest);
-void all_the_same(int n, int a[n], int *largest);
 
 int main(void)
 {
-	bool all_the_same = true;
 	int n, largest, second_largest;
 
 	do {
