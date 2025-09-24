@@ -128,12 +128,12 @@ void read_cards(int hand[static NUM_CARDS][2])
 				/* empty loop body */ ;
 		}
 
-                if (bad_card) {
+		if (bad_card) {
 			printf("Bad card; ignored.\n");
 			continue;
-                }
+		}
 
-                hand[cards_read][RANK] = rank;
+		hand[cards_read][RANK] = rank;
 		hand[cards_read][SUIT] = suit;
 
 		for (int card = 0; card < cards_read; card++) {
