@@ -26,7 +26,7 @@ void get_extension(const char *file_name, char *extension)
 	bool period_exists = false;
 	int start;
 
-	for (int i = 0; i < strlen(file_name); i++) {
+	for (size_t i = 0; i < strlen(file_name); i++) {
 		if (file_name[i] == '.') {
 			if (!period_exists)
 				period_exists = true;

@@ -24,7 +24,7 @@ void remove_filename(char *url)
 	bool slash_exists = false;
 	int last_slash;
 
-	for (int i = 0; i < strlen(url); i++) {
+	for (size_t i = 0; i < strlen(url); i++) {
 		if (url[i] == '/') {
 			if (!slash_exists)
 				slash_exists = true;
