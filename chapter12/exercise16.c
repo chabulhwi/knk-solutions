@@ -52,7 +52,7 @@ int main(void)
 	}
 	putchar('\n');
 
-	printf("Highest Temparature\n");
+	printf("Highest Temperature\n");
 	printf("-------------------\n");
 	for (int (*p)[HOURS] = temp; p < temp + DAYS; p++) {
 		switch (p - temp) {
