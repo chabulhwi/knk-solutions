@@ -5,11 +5,11 @@
 #define N 10
 
 void quicksort(int a[], int *low, int *high);
-int *split(int a[], int *low, int *high);
+int *split(int *low, int *high);
 
 int main(void)
 {
-	int a[N], i;
+	int a[N];
 
 	printf("Enter %d numbers to be sorted: ", N);
 	for (int *p = a; p < a + N; p++)
@@ -31,12 +31,12 @@ void quicksort(int a[], int *low, int *high)
 
 	if (low >= high)
 		return;
-	middle = split(a, low, high);
+	middle = split(low, high);
 	quicksort(a, low, middle - 1);
 	quicksort(a, middle + 1, high);
 }
 
-int *split(int a[], int *low, int *high)
+int *split(int *low, int *high)
 {
 	int part_element = *low;
 

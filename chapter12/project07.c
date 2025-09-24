@@ -8,7 +8,7 @@ void max_min(int n, int a[n], int *max, int *min);
 
 int main(void)
 {
-	int b[N], i, big, small;
+	int b[N], big, small;
 
 	printf("Enter %d numbers: ", N);
 	for (int *p = b; p < b + N; p++)
