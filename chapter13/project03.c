@@ -20,8 +20,10 @@ int main(void)
 
 	srand((unsigned)time(NULL));
 
-	printf("Enter number of cards in hand: ");
-	scanf("%d", &num_cards);
+	do {
+		printf("Enter number of cards in hand: ");
+		scanf("%d", &num_cards);
+	} while (num_cards < 0 || num_cards > NUM_SUITS * NUM_RANKS);
 
 	printf("Your hand:\n");
 	while (num_cards > 0) {
