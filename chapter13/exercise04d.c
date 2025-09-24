@@ -4,6 +4,7 @@ int read_line(int n, char str[n + 1]);
 
 int main(void)
 {
+	char ch;
 	int n;
 
 	do {
@@ -21,8 +22,14 @@ int main(void)
 	read_line(n, str);
 	printf("\nYou entered:\n");
 	puts(str);
-	read_line(n, str);
-	puts(str);
+
+	if ((ch = getchar()) != '\n' && ch != EOF) {
+		printf("\nLeft-behind characters:\n");
+		putchar(ch);
+		while ((ch = getchar()) != '\n' && ch != EOF)
+			putchar(ch);
+		putchar('\n');
+	}
 
 	return 0;
 }
