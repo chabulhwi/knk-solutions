@@ -33,7 +33,7 @@ int main(void)
 			printf("%s of %s\n", rank_str[rank], suit_str[suit]);
 		}
 	}
-	printf("\n");
+	putchar('\n');
 
 	return 0;
 }
