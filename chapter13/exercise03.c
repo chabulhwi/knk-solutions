@@ -12,7 +12,7 @@
 int main(void)
 {
 	int i, j;
-	char *s;
+	char s[16];
 
 	scanf("%d%s%d", &i, s, &j);
 	printf("i: %d\n", i);
