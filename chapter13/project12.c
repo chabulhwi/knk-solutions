@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <string.h>
 
 #define MAX_LEN 20
@@ -7,7 +6,6 @@
 
 int main(void)
 {
-	bool term_ch_correct = true;
 	char sentence[MAX_NUM][MAX_LEN + 2], *word, term_ch;
 	int i, word_num, word_len;
 
@@ -20,14 +18,10 @@ int main(void)
 
 		if (term_ch == '.' || term_ch == '?' || term_ch == '!') {
 			break;
-		} else if (getchar() == '\n') {
-			term_ch_correct = false;
-			break;
 		}
 	}
 	word_num = i + 1;
-	if (term_ch_correct)
-		word[word_len - 1] = '\0';
+	word[word_len - 1] = '\0';
 
 	printf("\nReversal of sentence: ");
 	for (i = word_num - 1; i >= 0; i--) {
@@ -35,8 +29,7 @@ int main(void)
 		if ((i != word_num - 1 || strcmp(word, "") != 0) && i != 0)
 			putchar(' ');
 	}
-	if (term_ch_correct)
-		printf("%c\n", term_ch);
+	printf("%c\n", term_ch);
 
 	return 0;
 }
