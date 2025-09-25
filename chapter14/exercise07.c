@@ -1,10 +1,7 @@
 /*
  * (a) The preprocessor's expansion of GENERIC_MAX(long) is as follows:
  *
- * long long_max(long x, long y)
- * {
- *     return x > y ? x : y;
- * }
+ * long long_max(long x, long y) { return x > y ? x : y; }
  *
  * (b) The names of some basic types include one or more whitespace characters.
  *     So, type##_max may be replaced with an invalid function name that
