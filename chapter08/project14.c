@@ -40,7 +40,6 @@ int main(void)
 	}
 
 	printf("\nReversal of sentence: ");
-
 	if (actual_length >= 2) {
 		end = actual_length - 2;
 		begin = end;
@@ -62,7 +61,6 @@ int main(void)
 			}
 		}
 	}
-
 	printf("%c\n", term_ch);
 
 	return 0;
