@@ -15,7 +15,7 @@
 
 ## Exercise 2
 
-\(b\). Function definitions should be in source files.
+\(b\); Function definitions should be in source files.
 
 
 ## Exercise 3
