@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+typedef signed char Int8;
+typedef short Int16;
+typedef int Int32;
+
 int main(void)
 {
 	printf("Type\t\tsizeof\n");
@@ -25,10 +29,6 @@ int main(void)
 	 * double          8
 	 * long double     16
 	 */
-
-	typedef signed char Int8;
-	typedef short Int16;
-	typedef int Int32;
 
 	return 0;
 }
