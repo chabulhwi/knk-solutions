@@ -13,13 +13,7 @@ void print_array(char walk[NUM_ROW][NUM_COL]);
 
 int main(void)
 {
-	bool dir_blocked[NUM_DIR], all_dir_blocked;
-	int count, dir, row, col;
 	char walk[NUM_ROW][NUM_COL];
-	const char label[] = {
-		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-	};
 
 	generate_random_walk(walk);
 	print_array(walk);
