@@ -1,0 +1,7 @@
+Metamath Zero is a theorem prover which is built to solve the problem of
+bootstrapping trust into a system. Yet at the same time it is general purpose
+-- it does not use a tailor-made program logic, it uses whatever axioms you
+give it, so it can support all common formal systems (ZFC, HOL, DTT, PA, really
+anything recursively enumerable). It is extremely fast, at least on
+hand-written inputs like set.mm, and can handle computer-science-sized
+problems.
