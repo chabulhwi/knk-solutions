@@ -86,8 +86,8 @@ bool read_cards(int black_rank[static NUM_CARDS],
 		int white_suit[static NUM_CARDS])
 {
 	bool bad_card, duplicate_cards_exist;
-	char ch, rank_ch, suit_ch;
-	int rank, suit;
+	char rank_ch, suit_ch;
+	int ch, rank, suit;
 	int card = 0;
 
 	while (card < 2 * NUM_CARDS) {

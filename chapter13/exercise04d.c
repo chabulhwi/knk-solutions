@@ -4,8 +4,7 @@ int read_line(int n, char str[n + 1]);
 
 int main(void)
 {
-	char ch;
-	int n;
+	int ch, n;
 
 	do {
 		printf("Enter the maximum length of the string: ");
