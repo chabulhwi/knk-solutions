@@ -27,7 +27,7 @@ int space_remaining(void);
  * preceding characters is pos.                           *
  **********************************************************/
 void insert_extra_spaces(int pos, int count, int *extra_spaces,
-                         int *spaces_to_insert);
+			 int *spaces_to_insert);
 
 /**********************************************************
  * write_line: Writes the current line with               *
