@@ -1,0 +1,8 @@
+#ifndef WEEKDAYS_H
+#define WEEKDAYS_H
+
+enum weekdays {
+	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY,
+};
+
+#endif
