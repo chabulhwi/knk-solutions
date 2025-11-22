@@ -27,7 +27,7 @@ void get_name(const char *str, int *begin, int *end)
 
 	if (str[*begin] == '\n') {
 		printf("Invalid name\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	*end = *begin + 1;

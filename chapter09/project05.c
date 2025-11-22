@@ -121,5 +121,5 @@ int sum_of_line(int n, int magic_square[n][n])
 
 error:
 	printf("The program has created an incorrect magic square.\n");
-	exit(1);
+	exit(EXIT_FAILURE);
 }

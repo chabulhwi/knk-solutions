@@ -87,7 +87,7 @@ void print_twelve_hour_time(int time)
 {
 	if (time < 0 || time >= 24 * 60) {
 		printf("Invalid time\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	int h = time / 60;

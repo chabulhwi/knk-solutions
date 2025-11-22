@@ -16,7 +16,7 @@ int day_of_year(int month, int day, int year)
 	 */
 	if (month < 1 || month > 12 || day < 1 || day > 31 || year < 0) {
 		printf("Some of the arguments have incorrect values.\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	} else if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
 		year_is_leap_year = true;
 		days_of_month[1] = 29;	// February has 29 days in a leap year

@@ -5,7 +5,7 @@ int gcd(int m, int n)
 {
 	if (m == 0 || n == 0) {
 		printf("Either m or n is zero.\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	} else {
 		int r;
 
