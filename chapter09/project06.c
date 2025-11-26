@@ -7,7 +7,7 @@ int main(void)
 {
 	double x;
 
-	printf("Enter the values for the variable x: ");
+	printf("Enter the value for the variable x: ");
 	scanf("%lf", &x);
 	printf("The value of the polynomial: %f\n", polynomial(x));
 
