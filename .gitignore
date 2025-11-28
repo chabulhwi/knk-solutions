@@ -10,12 +10,12 @@ project[0-9][0-9][a-z]
 boj4429
 boj4429-gemini-2.5-pro
 boj9012
+calc
 demo
-testdebug
 justify
 qsort
-calc
 remind
+testdebug
 *~
 *.bak
 *.html
