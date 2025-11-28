@@ -3,5 +3,5 @@
 
 int f2(void)
 {
-	return 2;
+	return F1 + F2 - 3;
 }
