@@ -27,7 +27,7 @@ int main(void)
 		else
 			printf("%2d ", i);
 	}
-	printf("%d\n", n);
+	printf("%d\n", n);	// 28 <= n <= 31
 
 	return 0;
 }
