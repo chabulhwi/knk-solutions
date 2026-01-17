@@ -3,11 +3,11 @@
 
 #define MONTHS 12
 
-void split_date(int day_of_year, int year, int *month, int *day);
-
 int days_of_month[MONTHS] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-bool year_is_leap_year;
+bool is_leap_year(int year);
+
+void split_date(int day_of_year, int year, int *month, int *day);
 
 int main(void)
 {
@@ -30,14 +30,15 @@ int main(void)
 	return 0;
 }
 
+bool is_leap_year(int year)
+{
+	return year % 400 == 0 || (year % 100 != 0 && year % 4 == 0);
+}
+
 void split_date(int day_of_year, int year, int *month, int *day)
 {
-	if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
-		year_is_leap_year = true;
+	if (is_leap_year(year))
 		days_of_month[1] = 29;	// February has 29 days in a leap year
-	} else {
-		year_is_leap_year = false;
-	}
 
 	for (int m = 0; m < MONTHS; m++) {
 		if (day_of_year <= days_of_month[m]) {
