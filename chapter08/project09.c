@@ -25,7 +25,8 @@ int main(void)
 
 	srand((unsigned)time(NULL));
 
-	for (count = 0, row = 0, col = 0;; count++) {
+	for (count = 0, row = 0, col = 0; row < NUM_ROW && col < NUM_COL;
+	     count++) {
 		array[row][col] = label[count];
 
 		if (count == NUM_ALP - 1)
@@ -37,13 +38,13 @@ int main(void)
 		if (row == 0 || array[row - 1][col] != '.')
 			dir_blocked[0] = true;	// upward direction blocked
 
-		if (row == NUM_ROW || array[row + 1][col] != '.')
+		if (row == NUM_ROW - 1 || array[row + 1][col] != '.')
 			dir_blocked[1] = true;	// downward direction blocked
 
 		if (col == 0 || array[row][col - 1] != '.')
 			dir_blocked[2] = true;	// leftward direction blocked
 
-		if (col == NUM_COL || array[row][col + 1] != '.')
+		if (col == NUM_COL - 1 || array[row][col + 1] != '.')
 			dir_blocked[3] = true;	// rightward direction blocked
 
 		all_dir_blocked = true;

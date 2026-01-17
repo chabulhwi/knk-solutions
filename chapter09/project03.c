@@ -37,7 +37,8 @@ void generate_random_walk(char walk[NUM_ROW][NUM_COL])
 
 	srand((unsigned)time(NULL));
 
-	for (count = 0, row = 0, col = 0;; count++) {
+	for (count = 0, row = 0, col = 0; row < NUM_ROW && col < NUM_COL;
+	     count++) {
 		walk[row][col] = label[count];
 
 		if (count == NUM_ALP - 1)
@@ -49,13 +50,13 @@ void generate_random_walk(char walk[NUM_ROW][NUM_COL])
 		if (row == 0 || walk[row - 1][col] != '.')
 			dir_blocked[0] = true;	// upward direction blocked
 
-		if (row == NUM_ROW || walk[row + 1][col] != '.')
+		if (row == NUM_ROW - 1 || walk[row + 1][col] != '.')
 			dir_blocked[1] = true;	// downward direction blocked
 
 		if (col == 0 || walk[row][col - 1] != '.')
 			dir_blocked[2] = true;	// leftward direction blocked
 
-		if (col == NUM_COL || walk[row][col + 1] != '.')
+		if (col == NUM_COL - 1 || walk[row][col + 1] != '.')
 			dir_blocked[3] = true;	// rightward direction blocked
 
 		all_dir_blocked = true;
