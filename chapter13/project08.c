@@ -13,7 +13,7 @@ int main(void)
 
 	printf("Enter a word: ");
 	scanf("%s", word);
-	printf("Srabble value: %d\n", compute_scrabble_value(word));
+	printf("Scrabble value: %d\n", compute_scrabble_value(word));
 
 	return 0;
 }

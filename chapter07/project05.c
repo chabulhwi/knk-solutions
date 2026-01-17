@@ -56,7 +56,7 @@ int main(void)
 		}
 	}
 
-	printf("Srabble value: %d\n", sum);
+	printf("Scrabble value: %d\n", sum);
 
 	return 0;
 }
