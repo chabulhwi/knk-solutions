@@ -15,11 +15,15 @@ int main(void)
 	scanf(" ");
 
 	last_name[0] = getchar();
-	for (int i = 0; last_name[i] != ' ' && last_name[i] != '\n'; i++)
-		last_name[i + 1] = getchar();
+	for (int i = 0; i < LENGTH && last_name[i] != ' ' &&
+	     last_name[i] != '\n'; i++) {
+		if (i < LENGTH - 1)
+			last_name[i + 1] = getchar();
+	}
 
 	printf("You entered the name: ");
-	for (int i = 0; last_name[i] != ' ' && last_name[i] != '\n'; i++)
+	for (int i = 0; i < LENGTH && last_name[i] != ' ' &&
+	     last_name[i] != '\n'; i++)
 		putchar(last_name[i]);
 
 	printf(", %c.\n", initial);
