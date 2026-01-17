@@ -74,7 +74,7 @@ int main(void)
 	 * If the time is the average of two adjacent departure times,
 	 * the program will select the earlier one.
 	 */
-	for (int i = 0; i < NUM_DEP_TIME; i++) {
+	for (int i = 0; i < NUM_DEP_TIME - 1; i++) {
 		if (average_time[i] < time && time <= average_time[i + 1]) {
 			if (depart_h[i] == 0)
 				printf("12:%.2d a.m.", depart_min[i]);
