@@ -16,7 +16,7 @@ int main(void)
 
 	printf("In B1FF-speak: ");
 	for (int i = 0; i < MAX_SIZE; i++) {
-		if (message[i + 1] == '\n') {
+		if (i == MAX_SIZE - 1 || message[i + 1] == '\n') {
 			if (message[i] == '.')
 				message[i] = '!';
 			putchar(message[i]);
