@@ -7,7 +7,7 @@
 int main(void)
 {
 	int actual_length = 0, shift = 0, index;
-	char message[LENGTH];
+	char ch, message[LENGTH];
 	const char letter[] = {
 		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -16,19 +16,19 @@ int main(void)
 	};
 
 	printf("Enter message to be encrypted:\n\n");
-	for (int i = 0;; i++) {
+	while (1) {
 		if (actual_length > LENGTH) {
 			printf("\nError: the message is too long.\n");
 
 			return 1;
 		}
 
-		message[i] = getchar();
-
-		if (message[i] != '\n')
+		if ((ch = getchar()) != '\n' && actual_length < LENGTH) {
+			message[actual_length] = ch;
 			actual_length++;
-		else
+		} else {
 			break;
+		}
 	}
 
 	do {
