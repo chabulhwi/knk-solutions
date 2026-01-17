@@ -1,8 +1,10 @@
 #include <stdio.h>
 
+#define SIZE 8
+
 int main(void)
 {
-	char chess_board[8][8] = {
+	char chess_board[SIZE][SIZE] = {
 		{'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
 		{'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
 		{' ', '.', ' ', '.', ' ', '.', ' ', '.'},
@@ -13,11 +15,11 @@ int main(void)
 		{'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'}
 	};
 
-	for (int rank = 0; rank < 8; rank++) {
-		for (int file = 0; file < 8; file++) {
+	for (int rank = 0; rank < SIZE; rank++) {
+		for (int file = 0; file < SIZE; file++) {
 			printf("%c", chess_board[rank][file]);
 
-			if (file % 8 == 7)
+			if (file == SIZE - 1)
 				putchar('\n');
 			else
 				putchar(' ');
