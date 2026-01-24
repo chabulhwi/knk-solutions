@@ -30,7 +30,7 @@ int *find_largest(int n, int a[n])
 
 	for (int i = 1; i < n; i++) {
 		if (*max < a[i])
-			*max = a[i];
+			max = &a[i];
 	}
 
 	return max;
