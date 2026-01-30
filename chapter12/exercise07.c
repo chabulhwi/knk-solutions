@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool search(int n, int a[n], int key);
+bool search(int n, const int a[n], int key);
 
 int main(void)
 {
@@ -30,13 +30,9 @@ int main(void)
 	return 0;
 }
 
-/*
- * I removed the const qualifier because assigning to int * from const int *
- * discards qualifiers.
- */
-bool search(int n, int a[n], int key)
+bool search(int n, const int a[n], int key)
 {
-	for (int *p = a; p < a + n; p++) {
+	for (const int *p = a; p < a + n; p++) {
 		if (*p == key)
 			return true;
 	}

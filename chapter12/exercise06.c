@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sum_array(int n, int a[n]);
+int sum_array(int n, const int a[n]);
 
 int main(void)
 {
@@ -23,15 +23,11 @@ int main(void)
 	return 0;
 }
 
-/*
- * I removed the const qualifier because assigning to int * from const int *
- * discards qualifiers.
- */
-int sum_array(int n, int a[n])
+int sum_array(int n, const int a[n])
 {
 	int sum = 0;
 
-	for (int *p = a; p < a + n; p++)
+	for (const int *p = a; p < a + n; p++)
 		sum += *p;
 
 	return sum;
