@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -O -Wall -Wextra -Wpedantic -std=c23
+CFLAGS = -g -O0 -Wall -Wextra -Wpedantic -fsanitize=address -fno-optimize-sibling-calls -fno-omit-frame-pointer -std=c23
 
 remind: remind.o readline.o
 	$(CC) $(CFLAGS) -o $@ $^
