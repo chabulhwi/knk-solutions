@@ -6,7 +6,7 @@ int main(void)
 {
 	bool palindrome = true;
 	char ch;
-	int n, msg_len;
+	int n, num_letters;
 
 	do {
 		printf("Enter the maximum length of the message: ");
@@ -22,7 +22,7 @@ int main(void)
 	printf("Enter a message: ");
 	for (int i = 0;;) {
 		if (i >= n || (ch = getchar()) == '\n') {
-			msg_len = i;
+			num_letters = i;
 			break;
 		}
 
@@ -32,8 +32,8 @@ int main(void)
 		}
 	}
 
-	for (int i = 0; i <= (msg_len - 1) / 2; i++) {
-		if (message[i] != message[msg_len - 1 - i]) {
+	for (int i = 0; i <= (num_letters - 1) / 2; i++) {
+		if (message[i] != message[num_letters - 1 - i]) {
 			palindrome = false;
 			break;
 		}
