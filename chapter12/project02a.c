@@ -32,6 +32,12 @@ int main(void)
 		}
 	}
 
+	if (num_letters == 0) {
+		printf("There are no letters.\n");
+
+		return 0;
+	}
+
 	for (int i = 0; i <= (num_letters - 1) / 2; i++) {
 		if (message[i] != message[num_letters - 1 - i]) {
 			palindrome = false;
