@@ -27,35 +27,27 @@ int main(void)
 	return 0;
 }
 
+/*
+ * (a) If the array has only one element, the second largest element equals the
+ *     largest one.
+ * (b) If all elements in the array are the same, the second largest element
+ *     equals the largest one.
+ * (c) Otherwise, the second largest element is less than the largest one.
+ */
 void find_two_largest(int n, int a[n], int *largest, int *second_largest)
 {
-	int largest_count = 0;
-
 	*largest = *a;
+	*second_largest = *largest;
+
 	for (int i = 1; i < n; i++) {
-		if (*largest < *(a + i))
+		if (*largest < *(a + i)) {
+			if (*second_largest < *largest)
+				*second_largest = *largest;
 			*largest = *(a + i);
-	}
-
-	for (int i = 0; i < n; i++) {
-		if (*(a + i) == *largest)
-			largest_count++;
-
-		if (largest_count > 1) {
-			*second_largest = *largest;
-			return;
-		}
-	}
-
-	for (int i = 0; i < n; i++) {
-		if (*(a + i) < *largest) {
+		} else if (*(a + i) < *largest
+			   && (*second_largest == *largest
+			       || *second_largest < *(a + i))) {
 			*second_largest = *(a + i);
-			break;
 		}
-	}
-
-	for (int i = 0; i < n; i++) {
-		if (*second_largest < *(a + i) && *(a + i) < *largest)
-			*second_largest = *(a + i);
 	}
 }
