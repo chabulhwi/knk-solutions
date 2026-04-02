@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sum_two_dimensional_array(int m, int n, int a[m][n]);
+int sum_two_dimensional_array(int m, int n, const int a[m][n]);
 
 int main(void)
 {
@@ -39,15 +39,11 @@ int main(void)
 	return 0;
 }
 
-/*
- * I removed the const qualifier because assigning to int * from const int *
- * discards qualifiers.
- */
-int sum_two_dimensional_array(int m, int n, int a[m][n])
+int sum_two_dimensional_array(const int m, int n, const int a[m][n])
 {
 	int sum = 0;
 
-	for (int *p = a[0]; p < a[m - 1] + n; p++) {
+	for (const int *p = a[0]; p < a[m - 1] + n; p++) {
 		sum += *p;
 	}
 

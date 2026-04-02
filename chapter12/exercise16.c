@@ -6,7 +6,7 @@
 #define DAYS 7
 #define HOURS 24
 
-bool search(int n, int *a, int key);
+bool search(int n, const int *a, int key);
 int *find_largest(int n, int a[n]);
 
 int main(void)
@@ -85,13 +85,9 @@ int main(void)
 	return 0;
 }
 
-/*
- * I removed the const qualifier because assigning to int * from const int *
- * discards qualifiers.
- */
-bool search(int n, int *a, int key)
+bool search(int n, const int *a, int key)
 {
-	for (int *p = a; p < a + n; p++) {
+	for (const int *p = a; p < a + n; p++) {
 		if (*p == key)
 			return true;
 	}

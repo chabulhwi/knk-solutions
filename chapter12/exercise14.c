@@ -7,7 +7,7 @@
 #define HOURS 24
 #define KEY 32
 
-bool search(int n, int *a, int key);
+bool search(int n, const int *a, int key);
 
 int main(void)
 {
@@ -60,13 +60,9 @@ int main(void)
 	return 0;
 }
 
-/*
- * I removed the const qualifier because assigning to int * from const int *
- * discards qualifiers.
- */
-bool search(int n, int *a, int key)
+bool search(int n, const int *a, int key)
 {
-	for (int *p = a; p < a + n; p++) {
+	for (const int *p = a; p < a + n; p++) {
 		if (*p == key)
 			return true;
 	}
