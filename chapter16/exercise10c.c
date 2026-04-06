@@ -31,12 +31,12 @@ int main(void)
 	scanf("%d", &y);
 
 	printf("Original rectangle\n");
-	printf("- Upper left: (%d, %d)\n", r.upper_left.x, r.upper_left.y);
+	printf("- Upper left:  (%d, %d)\n", r.upper_left.x, r.upper_left.y);
 	printf("- Lower right: (%d, %d)\n", r.lower_right.x, r.lower_right.y);
 
 	r = rectangle_move(r, x, y);
 	printf("Moved rectangle\n");
-	printf("- Upper left: (%d, %d)\n", r.upper_left.x, r.upper_left.y);
+	printf("- Upper left:  (%d, %d)\n", r.upper_left.x, r.upper_left.y);
 	printf("- Lower right: (%d, %d)\n", r.lower_right.x, r.lower_right.y);
 
 	return 0;
