@@ -33,7 +33,7 @@ int main(void)
 			// dispose of the previous characters
 			while (getchar() != '\n')
 				/* empty loop body */ ;
-		} else if (day < 0 || day > 31) {
+		} else if (day <= 0 || day > 31) {
 			printf("-- Invalid day --\n");
 
 			// dispose of the previous characters
