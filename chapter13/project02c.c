@@ -5,13 +5,14 @@
 
 #define MAX_REMIND 50		/* maximum number of reminders */
 #define MSG_LEN 60		/* max length of reminder message */
+#define MONTH_DAY_STR_LEN 5	/* length of month_day_str */
 
 int read_line(char str[], int n);
 
 int main(void)
 {
-	char reminders[MAX_REMIND][MSG_LEN + 3];
-	char month_day_str[6], msg_str[MSG_LEN + 1];
+	char reminders[MAX_REMIND][MONTH_DAY_STR_LEN + MSG_LEN + 1];
+	char month_day_str[MONTH_DAY_STR_LEN + 1], msg_str[MSG_LEN + 1];
 	int month, day, i, j, num_remind = 0;
 
 	for (;;) {
