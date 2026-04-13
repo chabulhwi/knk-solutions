@@ -1,4 +1,4 @@
-/* Prints a one-month reminder list */
+/* Prints a one-year reminder list */
 
 #include <stdio.h>
 #include <string.h>
