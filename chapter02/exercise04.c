@@ -1,6 +1,6 @@
 /*
- * The value of the first int variable is always 0, and the values of the
- * first and last float variables are always 0.000000.
+ * On my Linux machine, the values of the first and the last int variables are
+ * usually 0; the values of the first two float variables are usually 0.000000.
  */
 
 #include <stdio.h>

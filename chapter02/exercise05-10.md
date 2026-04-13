@@ -6,7 +6,7 @@
 
 ## Exercise 6
 
-It is hard to determine the number of underscores in such identifiers.
+Such an identifier may be confused with keywords in some C compilers.
 
 ## Exercise 7
 
