@@ -4,7 +4,7 @@ int main(void)
 {
 	float x, polynomial;
 
-	printf("Enter a value for a variable x: ");
+	printf("Enter a floating-point number: ");
 	scanf("%f", &x);
 
 	polynomial = ((((3 * x + 2) * x - 5) * x - 1) * x + 7) * x - 6;
