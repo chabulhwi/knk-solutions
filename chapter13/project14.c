@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 #define NUM_ALP 26
-#define MAX_LEN 6
+#define MAX_LEN 50
 
 bool are_anagrams(const char *word1, const char *word2);
 
