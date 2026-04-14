@@ -21,7 +21,7 @@ char *censor(int n, char str[n + 1])
 {
 	char substr[4];
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i <= n - 2; i++) {
 		for (int j = 0; j < 3; j++)
 			substr[j] = str[i + j];
 
