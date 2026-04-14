@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *censor(int n, char str[n]);
+char *censor(int n, char str[n + 1]);
 
 int main(int argc, char *argv[argc])
 {
@@ -17,7 +17,7 @@ int main(int argc, char *argv[argc])
 	return 0;
 }
 
-char *censor(int n, char str[n])
+char *censor(int n, char str[n + 1])
 {
 	char substr[4];
 
