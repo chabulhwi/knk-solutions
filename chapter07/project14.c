@@ -12,7 +12,7 @@ int main(void)
 		scanf("%lf", &pos);
 	} while (pos <= 0);
 
-	while (fabs(pos / sqrt - sqrt) / 2.0 >= .000001)
+	while (fabs(pos / sqrt - sqrt) / 2.0 >= .00001 * sqrt)
 		sqrt = (sqrt + pos / sqrt) / 2.0;
 
 	printf("Square root: %.5f\n", sqrt);
