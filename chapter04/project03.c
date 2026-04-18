@@ -2,13 +2,12 @@
 
 int main(void)
 {
-	int n;
+	int d1, d2, d3;
 
 	printf("Enter a three-digit number: ");
-	scanf("%3d", &n);
+	scanf("%1d%1d%1d", &d1, &d2, &d3);
 
-	printf("The reversal is: %d%d%d\n", n % 10, (n / 10) % 10,
-	       (n / 10) / 10);
+	printf("The reversal is: %d%d%d\n", d3, d2, d1);
 
 	return 0;
 }
