@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#define DEPART1  8 * 60
-#define DEPART2  9 * 60 + 43
-#define DEPART3 11 * 60 + 19
-#define DEPART4 12 * 60 + 47
-#define DEPART5 14 * 60
-#define DEPART6 15 * 60 + 45
-#define DEPART7 19 * 60
-#define DEPART8 21 * 60 + 45
+#define DEPART1  (8 * 60)
+#define DEPART2  (9 * 60 + 43)
+#define DEPART3 (11 * 60 + 19)
+#define DEPART4 (12 * 60 + 47)
+#define DEPART5 (14 * 60)
+#define DEPART6 (15 * 60 + 45)
+#define DEPART7 (19 * 60)
+#define DEPART8 (21 * 60 + 45)
 
 int main(void)
 {
