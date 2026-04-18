@@ -14,13 +14,22 @@ int main(void)
 
 	switch ((n + 1) % 10) {
 	case 1:
-		printf("st");
+		if ((n + 1) % 100 == 11)
+			printf("th");
+		else
+			printf("st");
 		break;
 	case 2:
-		printf("nd");
+		if ((n + 1) % 100 == 12)
+			printf("th");
+		else
+			printf("nd");
 		break;
 	case 3:
-		printf("rd");
+		if ((n + 1) % 100 == 13)
+			printf("th");
+		else
+			printf("rd");
 		break;
 	default:
 		printf("th");
