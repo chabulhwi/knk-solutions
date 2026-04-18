@@ -12,9 +12,6 @@ int main(void)
 	printf("Enter a sentence: ");
 	scanf(" ");
 	for (int i = 0;; i++) {
-		if (i > LENGTH)
-			goto error;
-
 		ch = getchar();
 		if (ch == '.' || ch == '?' || ch == '!') {
 			term_ch = ch;
@@ -27,13 +24,15 @@ int main(void)
 				term_ch = ch;
 				actual_length = i + 1;
 				break;
-			} else if (i == LENGTH) {
+			} else if (i >= LENGTH - 1) {
 				goto error;
 			} else {
 				sentence[i] = ' ';
 				i++;
 				sentence[i] = ch;
 			}
+		} else if (i == LENGTH) {
+			goto error;
 		} else {
 			sentence[i] = ch;
 		}
