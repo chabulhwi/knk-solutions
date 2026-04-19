@@ -5,24 +5,20 @@
 
 int main(void)
 {
+	int msg_len = MAX_SIZE;
 	char message[MAX_SIZE] = { 0 };
 
 	printf("Enter message: ");
 	for (int i = 0; i < MAX_SIZE; i++) {
 		message[i] = getchar();
-		if (message[i] == '\n')
+		if (message[i] == '\n') {
+			msg_len = i;
 			break;
+		}
 	}
 
 	printf("In B1FF-speak: ");
-	for (int i = 0; i < MAX_SIZE; i++) {
-		if (i == MAX_SIZE - 1 || message[i + 1] == '\n') {
-			if (message[i] == '.')
-				message[i] = '!';
-			putchar(message[i]);
-			break;
-		}
-
+	for (int i = 0; i < msg_len; i++) {
 		message[i] = toupper(message[i]);
 		switch (message[i]) {
 		case 'A':
@@ -42,6 +38,10 @@ int main(void)
 			break;
 		case 'S':
 			message[i] = '5';
+			break;
+		case '.':
+			if (i == msg_len - 1)
+				message[i] = '!';
 			break;
 		default:
 			break;
