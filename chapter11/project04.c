@@ -37,9 +37,9 @@ int main(void)
 }
 
 /**********************************************************
- * read_cards: Reads the cards into the external          *
- *             variables num_in_rank and num_in_suit;     *
- *             checks for bad cards and duplicate cards.  *
+ * read_cards: Reads the cards into num_in_rank and       *
+ *             num_in_suit; checks for bad cards and      *
+ *             duplicate cards.                           *
  **********************************************************/
 void read_cards(int num_ranks, int num_suits, int num_in_rank[num_ranks],
 		int num_in_suit[num_suits])
@@ -160,8 +160,7 @@ void read_cards(int num_ranks, int num_suits, int num_in_rank[num_ranks],
  *               straight, a flush, four-of-a-kind,       *
  *               and/or three-of-a-kind; determines the   *
  *               number of pairs; stores the results into *
- *               the external variables straight, flush,  *
- *               four, three, and pairs.                  *
+ *               straight, flush, four, three, and pairs. *
  **********************************************************/
 void analyze_hand(int num_ranks, int num_suits, int num_in_rank[num_ranks],
 		  int num_in_suit[num_suits], bool *straight, bool *flush,
@@ -205,9 +204,8 @@ void analyze_hand(int num_ranks, int num_suits, int num_in_rank[num_ranks],
 
 /**********************************************************
  * print_result: Prints the classification of the hand,   *
- *               based on the values of the external      *
- *               variables straight, flush, four, three,  *
- *               and pairs.                               *
+ *               based on the values of straight, flush,  *
+ *               four, three, and pairs.                  *
  **********************************************************/
 void print_result(bool *straight, bool *flush, bool *four, bool *three, int
 		  *pairs)
