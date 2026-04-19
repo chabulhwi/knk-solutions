@@ -163,7 +163,7 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
 		  int num_in_suit[static NUM_SUITS])
 {
 	int num_consec = 0;
-	int rank, suit;
+	int rank, lowest_rank, suit;
 
 	straight = false;
 	flush = false;
@@ -180,10 +180,12 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
 	rank = 0;
 	while (num_in_rank[rank] == 0)
 		rank++;
+	lowest_rank = rank;
 	for (; rank < NUM_RANKS && num_in_rank[rank] > 0; rank++)
 		num_consec++;
-	if (num_consec == NUM_CARDS || (num_consec == NUM_CARDS - 1 &&
-					num_in_rank[NUM_RANKS - 1] > 0)) {
+	if (num_consec == NUM_CARDS || (lowest_rank == 0 &&
+					num_consec == NUM_CARDS - 1
+					&& num_in_rank[NUM_RANKS - 1] > 0)) {
 		straight = true;
 
 		return;
@@ -207,10 +209,14 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
 void print_result(int num_in_rank[static NUM_RANKS])
 {
 	if (straight && flush) {
-		if (num_in_rank[NUM_RANKS - 1] > 0)
-			printf("Royal flush");
-		else
+		if (num_in_rank[NUM_RANKS - 1] > 0) {
+			if (num_in_rank[NUM_RANKS - 5] > 0)
+				printf("Royal flush");
+			else
+				printf("Ace-low straight flush");
+		} else {
 			printf("Straight flush");
+		}
 	} else if (four) {
 		printf("Four of a kind");
 	} else if (three && pairs == 1) {
@@ -218,7 +224,10 @@ void print_result(int num_in_rank[static NUM_RANKS])
 	} else if (flush) {
 		printf("Flush");
 	} else if (straight) {
-		printf("Straight");
+		if (num_in_rank[NUM_RANKS - 1] > 0 && num_in_rank[0] > 0)
+			printf("Ace-low straight");
+		else
+			printf("Straight");
 	} else if (three) {
 		printf("Three of a kind");
 	} else if (pairs == 2) {
