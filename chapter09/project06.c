@@ -16,13 +16,17 @@ int main(void)
 
 double power(double x, int n)
 {
+	double tmp = 0;
+
 	if (n == 0) {
 		return 1.0;
 	} else if (n > 0) {
-		if (n % 2 == 0)
-			return power(x, n / 2) * power(x, n / 2);
-		else
+		if (n % 2 == 0) {
+			tmp = power(x, n / 2);
+			return tmp * tmp;
+		} else {
 			return x * power(x, n - 1);
+		}
 	} else {
 		return 1.0 / power(x, -n);
 	}
