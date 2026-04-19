@@ -8,7 +8,7 @@ struct date {
 	int year;
 };
 
-void check_range(struct date d);
+void check_date(struct date d);
 
 bool leap_year(int year);
 
@@ -22,13 +22,13 @@ int main(void)
 
 	printf("Enter a date (mm/dd/yyyy): ");
 	scanf("%d/%d/%d", &d.month, &d.day, &d.year);
-	check_range(d);
+	check_date(d);
 	printf("Day of the year: %d\n", day_of_year(d));
 
 	return 0;
 }
 
-void check_range(struct date d)
+void check_date(struct date d)
 {
 	if (d.month < 1 || d.month > 12 || d.day < 1 ||
 	    d.day > days_of_month(d.month, d.year) || d.year < 0) {
