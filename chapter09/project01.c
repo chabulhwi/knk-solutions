@@ -57,6 +57,12 @@ void selection_sort(int n, int a[n], int k)
 {
 	int max = a[0], idx = 0;
 
+	if (k <= 1)
+		return;
+
+	if (k > n)
+		k = n;
+
 	for (int i = 1; i < k; i++) {
 		if (max < a[i]) {
 			max = a[i];
@@ -64,14 +70,9 @@ void selection_sort(int n, int a[n], int k)
 		}
 	}
 
-	if (k >= n) {
-		a[idx] = a[n - 1];
-		a[n - 1] = max;
-	} else if (k > 0) {
+	if (k > 1) {
 		a[idx] = a[k - 1];
 		a[k - 1] = max;
-	}
-
-	if (k > 0)
 		selection_sort(n, a, k - 1);
+	}
 }
