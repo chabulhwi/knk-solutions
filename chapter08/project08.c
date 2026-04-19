@@ -12,7 +12,7 @@ int main(void)
 	double quiz_min_score[NUM_QUIZ] = { 0.0 };
 
 	for (int i = 0; i < NUM_STUDENT; i++) {
-		printf("Enter Student #%d's five quiz grades: ", i + 1);
+		printf("Enter Student #%d's quiz grades: ", i + 1);
 		for (int j = 0; j < NUM_QUIZ; j++) {
 			scanf("%lf", &score[i][j]);
 			student_total_score[i] += score[i][j];
@@ -29,14 +29,14 @@ int main(void)
 	printf("\nStudent\tTotal\tAverage\n");
 	for (int i = 0; i < NUM_STUDENT; i++) {
 		printf("%d\t%.1f\t%.1f\t\n", i + 1, student_total_score[i],
-		       student_total_score[i] / 5.0);
+		       student_total_score[i] / (double)NUM_QUIZ);
 	}
 
 	printf("\nQuiz\tAverage\tHigh\tLow\n");
 	for (int j = 0; j < NUM_QUIZ; j++) {
 		printf("%d\t%.1f\t%.1f\t%.1f\n", j + 1,
-		       quiz_total_score[j] / 5.0, quiz_max_score[j],
-		       quiz_min_score[j]);
+		       quiz_total_score[j] / (double)NUM_STUDENT,
+		       quiz_max_score[j], quiz_min_score[j]);
 	}
 
 	return 0;
