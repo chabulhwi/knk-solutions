@@ -1,3 +1,8 @@
+/*
+ * I didn't want to assume that the program's underlying character set is ASCII,
+ * so I avoided using operations on characters.
+ */
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <ctype.h>
