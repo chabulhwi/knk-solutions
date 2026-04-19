@@ -1,4 +1,8 @@
-/* Computes the Scrabble value of a word */
+/*
+ * Computes the Scrabble value of a word. I didn't want to assume that the
+ * program's underlying character set is ASCII, so I avoided using operations on
+ * characters.
+ */
 
 #include <stdio.h>
 #include <ctype.h>
