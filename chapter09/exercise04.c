@@ -31,19 +31,20 @@ int day_of_year(int month, int day, int year)
 {
 	int days = 0;
 
-	/*
-	 * A viewer of my Chzzk stream told me how to simplify the cascaded
-	 * if-else statement. Thanks!
-	 */
-	if (month < 1 || month > 12 || day < 1 || day > 31 || year < 0) {
-		printf("Some of the arguments have incorrect values.\n");
-		exit(EXIT_FAILURE);
-	}
-
 	if (is_leap_year(year))
 		days_of_month[1] = 29;	// February has 29 days in a leap year
 	else
 		days_of_month[1] = 28;	// otherwise, it has 28 days
+
+	/*
+	 * A viewer of my Chzzk stream told me how to simplify the cascaded
+	 * if-else statement. Thanks!
+	 */
+	if (month < 1 || month > 12 || day < 1 || day > days_of_month[month - 1]
+	    || year < 0) {
+		printf("Error: invalid date\n");
+		exit(EXIT_FAILURE);
+	}
 
 	for (int i = 1; i < month; i++)
 		days += days_of_month[i - 1];
