@@ -31,8 +31,8 @@ int main(void)
 }
 
 /*
- * Reads the cards into the external variables num_in_rank and num_in_suit;
- * checks for bad cards and duplicate cards.
+ * Reads the cards into num_in_rank and num_in_suit; checks for bad cards and
+ * duplicate cards.
  */
 void read_cards(int num_in_rank[static NUM_RANKS],
 		int num_in_suit[static NUM_SUITS])
