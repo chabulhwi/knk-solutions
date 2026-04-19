@@ -42,6 +42,8 @@ int day_of_year(int month, int day, int year)
 
 	if (is_leap_year(year))
 		days_of_month[1] = 29;	// February has 29 days in a leap year
+	else
+		days_of_month[1] = 28;	// otherwise, it has 28 days
 
 	for (int i = 1; i < month; i++)
 		days += days_of_month[i - 1];
