@@ -176,7 +176,7 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
 		if (num_in_suit[suit] == NUM_CARDS)
 			flush = true;
 
-	/* check for straight and royal */
+	/* check for straight */
 	rank = 0;
 	while (num_in_rank[rank] == 0)
 		rank++;
