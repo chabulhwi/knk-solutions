@@ -176,7 +176,7 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
 		if (num_in_suit[suit] == NUM_CARDS)
 			flush = true;
 
-	/* check for straight and royal */
+	/* check for straight (including ace-low) */
 	rank = 0;
 	while (num_in_rank[rank] == 0)
 		rank++;
@@ -203,8 +203,8 @@ void analyze_hand(int num_in_rank[static NUM_RANKS],
 }
 
 /*
- * Prints the classification of the hand, based on the values of the external
- * variables straight, flush, four, three, and pairs.
+ * Prints the classification of the hand, based on num_in_rank and the values of
+ * the external variables straight, flush, four, three, and pairs.
  */
 void print_result(int num_in_rank[static NUM_RANKS])
 {
