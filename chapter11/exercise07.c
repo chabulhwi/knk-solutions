@@ -39,6 +39,8 @@ void split_date(int day_of_year, int year, int *month, int *day)
 {
 	if (is_leap_year(year))
 		days_of_month[1] = 29;	// February has 29 days in a leap year
+	else
+		days_of_month[1] = 28;	// otherwise, it has 28 days
 
 	for (int m = 0; m < MONTHS; m++) {
 		if (day_of_year <= days_of_month[m]) {
