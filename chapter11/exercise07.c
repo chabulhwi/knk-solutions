@@ -2,6 +2,7 @@
 #include <stdbool.h>
 
 #define MONTHS 12
+#define DAYS_OF_YEAR 365
 
 int days_of_month[MONTHS] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -18,10 +19,15 @@ int main(void)
 		scanf("%d", &year);
 	} while (year < 0);
 
-	do {
+	while (1) {
 		printf("Enter a day of the year: ");
 		scanf("%d", &day_of_year);
-	} while (day_of_year < 1 || day_of_year > 366);
+
+		if (1 <= day_of_year && day_of_year <= DAYS_OF_YEAR)
+			break;
+		else if (day_of_year == DAYS_OF_YEAR + 1 && is_leap_year(year))
+			break;
+	}
 
 	split_date(day_of_year, year, &month, &day);
 
