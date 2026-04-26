@@ -32,31 +32,30 @@ int space_remaining(void)
 	return MAX_LINE_LEN - line_len;
 }
 
-void insert_extra_spaces(int pos, int count, int *extra_spaces,
-			 int *spaces_to_insert)
+void add_extra_spaces(int pos, int count, int *extra_spaces, int *spaces_to_add)
 {
 	int num_gaps = num_words - 1;
 
 	if (count == num_gaps - *extra_spaces % num_gaps + 1)
-		*spaces_to_insert += 1;
+		*spaces_to_add += 1;
 
-	if (*spaces_to_insert > 0) {
+	if (*spaces_to_add > 0) {
 		for (int i = line_len; i > pos; i--)
-			line[i + *spaces_to_insert] = line[i];
-		for (int i = pos + 1; i <= pos + *spaces_to_insert; i++)
+			line[i + *spaces_to_add] = line[i];
+		for (int i = pos + 1; i <= pos + *spaces_to_add; i++)
 			line[i] = ' ';
 	}
-	line_len += *spaces_to_insert;
+	line_len += *spaces_to_add;
 }
 
 void write_line(void)
 {
 	int low = 0, high = line_len - 1, count = 0, extra_spaces,
-		num_gaps, spaces_to_insert;
+		num_gaps, spaces_to_add;
 
 	extra_spaces = space_remaining();
 	num_gaps = num_words - 1;
-	spaces_to_insert = extra_spaces / num_gaps;
+	spaces_to_add = extra_spaces / num_gaps;
 
 	for (int pos = 0; pos < line_len; pos++) {
 		if (line[pos] == ' ')
@@ -76,19 +75,17 @@ void write_line(void)
 		if (low < 0)
 			break;
 		count++;
-		insert_extra_spaces(low, count, &extra_spaces,
-				    &spaces_to_insert);
+		add_extra_spaces(low, count, &extra_spaces, &spaces_to_add);
 		low--;
-		high += spaces_to_insert;
+		high += spaces_to_add;
 
 		while (high < line_len && line[high] != ' ')
 			high++;
 		if (high >= line_len)
 			break;
 		count++;
-		insert_extra_spaces(high, count, &extra_spaces,
-				    &spaces_to_insert);
-		high += spaces_to_insert + 1;
+		add_extra_spaces(high, count, &extra_spaces, &spaces_to_add);
+		high += spaces_to_add + 1;
 	}
 	puts(line);
 }

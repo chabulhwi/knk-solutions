@@ -22,12 +22,12 @@ void add_word(const char *word);
 int space_remaining(void);
 
 /**********************************************************
- * insert_extra_spaces: Inserts extra spaces into the     *
- * character at the position where the number of          *
- * preceding characters is pos.                           *
+ * add_extra_spaces: Put extra spaces after the character *
+ * at the position where the number of preceding          *
+ * characters is pos.                                     *
  **********************************************************/
-void insert_extra_spaces(int pos, int count, int *extra_spaces,
-			 int *spaces_to_insert);
+void add_extra_spaces(int pos, int count, int *extra_spaces,
+		      int *spaces_to_add);
 
 /**********************************************************
  * write_line: Writes the current line with               *
