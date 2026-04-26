@@ -72,7 +72,7 @@ int main(void)
 			push(left / right);
 			break;
 		case '=':
-			printf("Value of expression: %d\n", contents[top - 1]);
+			printf("Value of expression: %d\n", pop());
 			make_empty();
 			printf("Enter an RPN expression: ");
 			break;

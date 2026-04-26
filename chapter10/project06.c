@@ -80,9 +80,7 @@ int main(void)
 			push(left / right);
 			break;
 		case '=':
-			if (is_empty())
-				stack_underflow();
-			printf("Value of expression: %d\n", contents[top - 1]);
+			printf("Value of expression: %d\n", pop());
 			make_empty();
 			printf("Enter an RPN expression: ");
 			break;

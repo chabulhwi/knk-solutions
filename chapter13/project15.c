@@ -138,7 +138,7 @@ int evaluate_RPN_expression(const char *expression)
 			push(left / right);
 			break;
 		case '=':
-			return contents[top - 1];
+			return pop();
 		default:
 			if (!isspace(expression[i]))
 				exit(EXIT_SUCCESS);
