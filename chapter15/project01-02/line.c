@@ -41,7 +41,7 @@ void insert_extra_spaces(int pos, int count, int *extra_spaces,
 		*spaces_to_insert += 1;
 
 	if (*spaces_to_insert > 0) {
-		for (int i = line_len + 1; i > pos; i--)
+		for (int i = line_len; i > pos; i--)
 			line[i + *spaces_to_insert] = line[i];
 		for (int i = pos + 1; i <= pos + *spaces_to_insert; i++)
 			line[i] = ' ';
