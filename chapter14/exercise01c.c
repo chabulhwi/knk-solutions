@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define PRODUCT_LT_ONE_HUNDRED(x, y) ((x) * (y) < 100 ? 1 : 0)
+#define PRODUCT_LT_ONE_HUNDRED(x, y) ((x) * (y) < 100)
 
 int main(void)
 {
