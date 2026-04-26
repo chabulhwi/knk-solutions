@@ -64,6 +64,17 @@ void write_line(void)
 
 	extra_spaces = space_remaining();
 	num_gaps = num_words - 1;
+
+	if (num_gaps == 0) {
+		for (int i = 0; i < extra_spaces; i++) {
+			line[line_len + i] = ' ';
+		}
+		line[line_len + extra_spaces] = '\0';
+
+		puts(line);
+		printf("num_gaps: %d\n", num_gaps);
+		return;
+	}
 	spaces_to_add = extra_spaces / num_gaps;
 
 	for (int pos = 0; pos < line_len; pos++) {
