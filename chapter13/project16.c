@@ -12,7 +12,8 @@ int main(void)
 	printf("Enter a message: ");
 	fgets(message, MAX_LEN + 2, stdin);
 
-	reverse(message);
+	if (strlen(message) >= 2)
+		reverse(message);
 	printf("Reversal is: %s", message);
 
 	return 0;
