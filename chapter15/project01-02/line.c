@@ -36,6 +36,15 @@ void add_extra_spaces(int pos, int count, int *extra_spaces, int *spaces_to_add)
 {
 	int num_gaps = num_words - 1;
 
+	/*
+	 * The write_line function inserts the larger gaps into both the
+	 * beginning and the end of every line.
+	 *
+	 * The pos variable starts at the middle of the line. As the count
+	 * variable increases, the pos variable alternates between going to the
+	 * left and going to the right, until it reaches the beginning or the
+	 * end of the line.
+	 */
 	if (count == num_gaps - *extra_spaces % num_gaps + 1)
 		*spaces_to_add += 1;
 

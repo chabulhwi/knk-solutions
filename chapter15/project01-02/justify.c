@@ -1,4 +1,7 @@
-/* Formats a file of text */
+/*
+ * Formats a file of text. In my program, the write_line function inserts the
+ * larger gaps into both the beginning and the end of every line.
+ */
 
 #include "line.h"
 #include "word.h"
