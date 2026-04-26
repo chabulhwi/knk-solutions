@@ -2,6 +2,7 @@
 #include <string.h>
 #include "line.h"
 
+/* This should be greater than MAX_WORD_LEN in the justify.c file. */
 #define MAX_LINE_LEN 60
 
 char line[MAX_LINE_LEN + 1];

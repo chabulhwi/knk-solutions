@@ -20,6 +20,12 @@ int main(void)
 			flush_line();
 			return 0;
 		}
+
+		/*
+		 * When num_words is greater than zero, there should be one
+		 * space between the last word of the line and the new word that
+		 * the program will add to the line.
+		 */
 		if ((num_words == 0 && word_len > space_remaining()) ||
 		    (num_words > 0 && word_len + 1 > space_remaining())) {
 			write_line();
