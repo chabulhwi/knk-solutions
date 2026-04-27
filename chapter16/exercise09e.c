@@ -48,5 +48,9 @@ struct color make_color(int red, int green, int blue)
 
 struct color darker(struct color c)
 {
-	return (struct color) { c.red * 0.7, c.green * 0.7, c.blue * 0.7 };
+	return (struct color) {
+		(int)c.red * 0.7,
+		(int)c.green * 0.7,
+		(int)c.blue * 0.7,
+	};
 }
