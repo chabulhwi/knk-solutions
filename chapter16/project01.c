@@ -46,7 +46,8 @@ const size_t num_country = sizeof(country_codes) / sizeof(country_codes[0]);
 int main(void)
 {
 	bool code_found = false;
-	int code, index;
+	int code;
+	size_t index;
 
 	printf("Enter an international dialing code: ");
 	scanf("%d", &code);
