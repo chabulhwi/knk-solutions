@@ -19,7 +19,7 @@ int *top_ptr = &contents[0];
 int main(void)
 {
 	char ch;
-	int left, right;
+	int left, right, result;
 
 	printf("Enter an RPN expression: ");
 	while (1) {
@@ -80,8 +80,14 @@ int main(void)
 			push(left / right);
 			break;
 		case '=':
-			printf("Value of expression: %d\n", *--top_ptr);
-			make_empty();
+			result = *--top_ptr;
+
+			if (!is_empty()) {
+				printf("Too many operands in expression\n");
+				exit(EXIT_FAILURE);
+			}
+			printf("Value of expression: %d\n", result);
+
 			printf("Enter an RPN expression: ");
 			break;
 		default:

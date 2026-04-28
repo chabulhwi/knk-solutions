@@ -79,7 +79,7 @@ int pop(void)
 
 int evaluate_RPN_expression(const char *expression)
 {
-	int left, right;
+	int left, right, result;
 
 	for (int i = 0; i < MAX_LEN && (size_t)i < strlen(expression); i++) {
 		switch (expression[i]) {
@@ -138,7 +138,12 @@ int evaluate_RPN_expression(const char *expression)
 			push(left / right);
 			break;
 		case '=':
-			return pop();
+			result = pop();
+			if (!is_empty()) {
+				printf("Too many operands in expression\n");
+				exit(EXIT_FAILURE);
+			}
+			return result;
 		default:
 			if (!isspace(expression[i]))
 				exit(EXIT_SUCCESS);
