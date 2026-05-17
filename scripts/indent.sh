@@ -7,6 +7,14 @@ find . \( -name '*.c' -o -name '*.h' \) \
     -name 'exercise08b.h' -o \
     -name 'exercise10*.c' -o \
     -name 'exercise14b.c' \) \) \
+    ! \( -path "./chapter17/*" \( \
+    -name 'exercise06.c' -o \
+    -name 'exercise07.c' -o \
+    -name 'exercise11.c' -o \
+    -name 'exercise12.c' -o \
+    -name 'exercise13.c' -o \
+    -name 'exercise14.c' -o \
+    -name 'exercise19.c' \) \) \
     -exec indent \
     -nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce \
     -cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai \
