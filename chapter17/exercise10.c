@@ -33,6 +33,7 @@ int main(void)
 
 	putchar('\n');
 	print_part(p);
+	free(p);
 
 	return 0;
 }

@@ -101,8 +101,8 @@ void insert(int *num_parts, struct part inventory[MAX_PARTS])
 /**********************************************************
  * search: Prompts the user to enter a part number, then  *
  *         looks up the part in the database. If the part *
- *         exists, prints the name and quantity on hand;  *
- *         if not, prints an error message.               *
+ *         exists, prints the name, quantity on hand, and *
+ *         price; if not, prints an error message.        *
  **********************************************************/
 void search(int *num_parts, struct part inventory[MAX_PARTS])
 {
@@ -147,8 +147,8 @@ void update(int *num_parts, struct part inventory[MAX_PARTS])
 
 /**********************************************************
  * print: Prints a listing of all parts in the database,  *
- *        showing the part number, part name, and         *
- *        quantity on hand. Parts are sorted by part      *
+ *        showing the part number, part name, quantity on *
+ *        hand, and price. Parts are sorted by part       *
  *        number.                                         *
  **********************************************************/
 void print(int *num_parts, struct part inventory[MAX_PARTS])

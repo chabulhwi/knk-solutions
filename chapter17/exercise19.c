@@ -3,7 +3,6 @@
 #include <string.h>
 
 #define MAX_LEN 15
-#define NUM_CMD 8
 
 void new_cmd(void);
 void open_cmd(void);
@@ -17,7 +16,7 @@ void exit_cmd(void);
 struct {
 	char *cmd_name;
 	void (*cmd_pointer)(void);
-} file_cmd[NUM_CMD] = {
+} file_cmd[] = {
 	{"new", &new_cmd},
 	{"open", &open_cmd},
 	{"close", &close_cmd},
@@ -27,6 +26,8 @@ struct {
 	{"print", &print_cmd},
 	{"exit", &exit_cmd}
 };
+
+int num_cmd = sizeof(file_cmd) / sizeof(file_cmd[0]);
 
 void run_cmd(char *str);
 int read_line(int n, char str[n]);
@@ -83,12 +84,12 @@ void exit_cmd(void)
 
 void run_cmd(char *str)
 {
-	for (int i = 0; i < NUM_CMD; i++) {
-		if (strcmp(str, file_cmd[i].cmd_name) == 0)
+	for (int i = 0; i < num_cmd; i++) {
+		if (strcmp(str, file_cmd[i].cmd_name) == 0) {
 			(*file_cmd[i].cmd_pointer)();
+			return;
+		}
 	}
-
-	return;
 }
 
 int read_line(int n, char str[n])

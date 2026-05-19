@@ -6,8 +6,7 @@ struct point {
 };
 struct rectangle {
 	struct point upper_left, lower_right;
-};
-struct rectangle *p;
+} *p;
 
 int main(void)
 {
@@ -22,6 +21,7 @@ int main(void)
 
 	printf("- Upper left:  (%d, %d)\n", p->upper_left.x, p->upper_left.y);
 	printf("- Lower right: (%d, %d)\n", p->lower_right.x, p->lower_right.y);
+	free(p);
 
 	return 0;
 }

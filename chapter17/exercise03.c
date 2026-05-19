@@ -19,7 +19,6 @@ int main(void)
 
 	if (result == NULL) {
 		printf("Error: memory allocation failed\n");
-		free(result);
 		exit(EXIT_FAILURE);
 	}
 
