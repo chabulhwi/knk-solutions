@@ -73,7 +73,6 @@ void write_line(void)
 		line[line_len + extra_spaces] = '\0';
 
 		puts(line);
-		printf("num_gaps: %d\n", num_gaps);
 		return;
 	}
 	spaces_to_add = extra_spaces / num_gaps;
