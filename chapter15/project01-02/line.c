@@ -71,7 +71,6 @@ void write_line(void)
 			line[line_len + i] = ' ';
 		}
 		line[line_len + extra_spaces] = '\0';
-
 		puts(line);
 		return;
 	}
