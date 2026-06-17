@@ -35,11 +35,11 @@ int space_remaining(void)
 	return MAX_LINE_LEN - line_len;
 }
 
-void add_extra_spaces(int pos, int count, int *extra_spaces, int *spaces_to_add)
+void add_extra_spaces(int pos, int count, int extra_spaces, int *spaces_to_add)
 {
 	int num_gaps = num_words - 1;
 
-	if (count == num_gaps - *extra_spaces % num_gaps + 1)
+	if (count == num_gaps - extra_spaces % num_gaps + 1)
 		*spaces_to_add += 1;
 
 	if (*spaces_to_add > 0) {
@@ -76,7 +76,7 @@ void write_line(void)
 			if (low >= line_len)
 				break;
 			count++;
-			add_extra_spaces(low, count, &extra_spaces,
+			add_extra_spaces(low, count, extra_spaces,
 					 &spaces_to_add);
 			low += spaces_to_add + 1;
 		}
@@ -87,7 +87,7 @@ void write_line(void)
 			if (high < 0)
 				break;
 			count++;
-			add_extra_spaces(high, count, &extra_spaces,
+			add_extra_spaces(high, count, extra_spaces,
 					 &spaces_to_add);
 			high--;
 		}
