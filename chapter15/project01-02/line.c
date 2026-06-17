@@ -1,10 +1,12 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 #include "line.h"
 
 /* This should be greater than MAX_WORD_LEN in the justify.c file. */
 #define MAX_LINE_LEN 60
 
+bool wider_gaps_at_end = true;
 char line[MAX_LINE_LEN + 1];
 int line_len = 0;
 int num_words = 0;
@@ -37,15 +39,6 @@ void add_extra_spaces(int pos, int count, int *extra_spaces, int *spaces_to_add)
 {
 	int num_gaps = num_words - 1;
 
-	/*
-	 * The write_line function inserts the larger gaps into both the
-	 * beginning and the end of every line.
-	 *
-	 * The pos variable starts at the middle of the line. As the count
-	 * variable increases, the pos variable alternates between going to the
-	 * left and going to the right, until it reaches the beginning or the
-	 * end of the line.
-	 */
 	if (count == num_gaps - *extra_spaces % num_gaps + 1)
 		*spaces_to_add += 1;
 
@@ -76,37 +69,31 @@ void write_line(void)
 	}
 	spaces_to_add = extra_spaces / num_gaps;
 
-	for (int pos = 0; pos < line_len; pos++) {
-		if (line[pos] == ' ')
+	if (wider_gaps_at_end) {
+		while (1) {
+			while (low < line_len && line[low] != ' ')
+				low++;
+			if (low >= line_len)
+				break;
 			count++;
-		if (count == num_gaps / 2 + num_gaps % 2)
-			low = pos;
-		if (count == num_gaps / 2 + num_gaps % 2 + 1) {
-			high = pos;
-			break;
+			add_extra_spaces(low, count, &extra_spaces,
+					 &spaces_to_add);
+			low += spaces_to_add + 1;
+		}
+	} else {
+		while (1) {
+			while (high >= 0 && line[high] != ' ')
+				high--;
+			if (high < 0)
+				break;
+			count++;
+			add_extra_spaces(high, count, &extra_spaces,
+					 &spaces_to_add);
+			high--;
 		}
 	}
-
-	count = 0;
-	while (1) {
-		while (low >= 0 && line[low] != ' ')
-			low--;
-		if (low < 0)
-			break;
-		count++;
-		add_extra_spaces(low, count, &extra_spaces, &spaces_to_add);
-		low--;
-		high += spaces_to_add;
-
-		while (high < line_len && line[high] != ' ')
-			high++;
-		if (high >= line_len)
-			break;
-		count++;
-		add_extra_spaces(high, count, &extra_spaces, &spaces_to_add);
-		high += spaces_to_add + 1;
-	}
 	puts(line);
+	wider_gaps_at_end = !wider_gaps_at_end;
 }
 
 void flush_line(void)
