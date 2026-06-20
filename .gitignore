@@ -13,7 +13,9 @@ boj9012
 calc
 demo
 inventory
+inventory2
 justify
+project[0-9][0-9]-[0-9][0-9]
 qsort
 remind
 testdebug
