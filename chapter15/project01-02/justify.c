@@ -23,8 +23,7 @@ int main(void)
 		 * space between the last word of the line and the new word that
 		 * the program will add to the line.
 		 */
-		if ((num_words == 0 && word_len > space_remaining()) ||
-		    (num_words > 0 && word_len + 1 > space_remaining())) {
+		if (num_words > 0 && word_len + 1 > space_remaining()) {
 			write_line();
 			clear_line();
 		}
