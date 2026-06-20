@@ -3,7 +3,7 @@
 #include <string.h>
 #include "line.h"
 
-/* This should be greater than MAX_WORD_LEN in the justify.c file. */
+/* This should be greater than MAX_WORD_LEN from the justify.c file. */
 #define MAX_LINE_LEN 60
 
 bool wider_gaps_at_end = true;
