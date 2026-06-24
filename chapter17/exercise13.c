@@ -19,6 +19,7 @@ struct node {
 
 struct node *insert_into_ordered_list(struct node *list, struct node *new_node);
 void print_list(struct node *list);
+void clear_list(struct node *list);
 
 int main(void)
 {
@@ -37,6 +38,7 @@ int main(void)
 		new_node = malloc(sizeof(struct node));
 		if (new_node == NULL) {
 			printf("Error: memory allocation failed\n");
+			clear_list(list);
 			exit(EXIT_FAILURE);
 		}
 		*new_node = (struct node) { value, NULL };
@@ -47,6 +49,8 @@ int main(void)
 
 	putchar('\n');
 	print_list(list);
+
+	clear_list(list);
 
 	return 0;
 }
@@ -84,5 +88,14 @@ void print_list(struct node *list)
 			putchar('\n');
 		else
 			putchar(' ');
+	}
+}
+
+void clear_list(struct node *list)
+{
+	while (list != NULL) {
+		struct node *next = list->next;
+		free(list);
+		list = next;
 	}
 }

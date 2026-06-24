@@ -9,6 +9,7 @@ struct node {
 struct node *add_to_list(struct node *list, int n);
 struct node *find_last(struct node *list, int n);
 void print_list(struct node *list);
+void clear_list(struct node *list);
 
 int main(void)
 {
@@ -39,6 +40,8 @@ int main(void)
 	else
 		print_list(last);
 
+	clear_list(list);
+
 	return 0;
 }
 
@@ -49,6 +52,7 @@ struct node *add_to_list(struct node *list, int n)
 	new_node = malloc(sizeof(struct node));
 	if (new_node == NULL) {
 		printf("Error: memory allocation failed\n");
+		clear_list(list);
 		exit(EXIT_FAILURE);
 	}
 
@@ -79,5 +83,14 @@ void print_list(struct node *list)
 			putchar('\n');
 		else
 			putchar(' ');
+	}
+}
+
+void clear_list(struct node *list)
+{
+	while (list != NULL) {
+		struct node *next = list->next;
+		free(list);
+		list = next;
 	}
 }

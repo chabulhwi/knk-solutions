@@ -13,7 +13,6 @@ struct node {
 	struct node *next;	// pointer to the next node
 };
 
-void stack_overflow(void);
 void stack_underflow(void);
 struct node *make_empty(struct node *contents);
 bool is_empty(struct node *contents);
@@ -109,6 +108,7 @@ int main(void)
 
 			if (!is_empty(contents)) {
 				printf("Too many operands in expression\n");
+				contents = make_empty(contents);
 				exit(EXIT_FAILURE);
 			}
 			printf("Value of expression: %d\n", result);
@@ -120,12 +120,6 @@ int main(void)
 			return 0;
 		}
 	}
-}
-
-void stack_overflow(void)
-{
-	printf("Expression is too complex\n");
-	exit(EXIT_FAILURE);
 }
 
 void stack_underflow(void)
@@ -163,6 +157,7 @@ struct node *push(struct node *contents, int i)
 	new_node = malloc(sizeof(struct node));
 	if (new_node == NULL) {
 		printf("Error: memory allocation failed\n");
+		contents = make_empty(contents);
 		exit(EXIT_FAILURE);
 	}
 

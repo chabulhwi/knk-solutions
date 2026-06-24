@@ -9,6 +9,7 @@ struct node {
 struct node *add_to_list(struct node *list, int n);
 int count_occurrences(struct node *list, int n);
 void print_list(struct node *list);
+void clear_list(struct node *list);
 
 int main(void)
 {
@@ -35,6 +36,8 @@ int main(void)
 	printf("Occurrences of %d: %d\n", value,
 	       count_occurrences(list, value));
 
+	clear_list(list);
+
 	return 0;
 }
 
@@ -45,6 +48,7 @@ struct node *add_to_list(struct node *list, int n)
 	new_node = malloc(sizeof(struct node));
 	if (new_node == NULL) {
 		printf("Error: memory allocation failed\n");
+		clear_list(list);
 		exit(EXIT_FAILURE);
 	}
 
@@ -75,5 +79,14 @@ void print_list(struct node *list)
 			putchar('\n');
 		else
 			putchar(' ');
+	}
+}
+
+void clear_list(struct node *list)
+{
+	while (list != NULL) {
+		struct node *next = list->next;
+		free(list);
+		list = next;
 	}
 }

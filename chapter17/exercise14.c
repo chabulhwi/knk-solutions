@@ -9,11 +9,12 @@ struct node {
 struct node *add_to_list(struct node *list, int n);
 void delete_from_list(struct node **list, int n);
 void print_list(struct node *list);
+void clear_list(struct node *list);
 
 int main(void)
 {
 	int n = 0, value;
-	struct node *list = NULL, *tmp = NULL;
+	struct node *list = NULL;
 
 	do {
 		printf("Enter the length of the linked list: ");
@@ -36,11 +37,7 @@ int main(void)
 
 	putchar('\n');
 	print_list(list);
-	for (struct node *p = list; p != NULL;) {
-		tmp = p;
-		p = p->next;
-		free(tmp);
-	}
+	clear_list(list);
 
 	return 0;
 }
@@ -52,6 +49,7 @@ struct node *add_to_list(struct node *list, int n)
 	new_node = malloc(sizeof(struct node));
 	if (new_node == NULL) {
 		printf("Error: memory allocation failed\n");
+		clear_list(list);
 		exit(EXIT_FAILURE);
 	}
 
@@ -102,5 +100,16 @@ void print_list(struct node *list)
 			putchar('\n');
 		else
 			putchar(' ');
+	}
+}
+
+void clear_list(struct node *list)
+{
+	struct node *tmp = NULL;
+
+	for (struct node *p = list; p != NULL;) {
+		tmp = p;
+		p = p->next;
+		free(tmp);
 	}
 }
