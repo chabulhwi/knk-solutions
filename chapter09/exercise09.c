@@ -1,7 +1,7 @@
 /* Output: i = 1, j = 2
  *
  * Note that any changes made to a function's parameter during the execution of
- * the function don’t affect the corresponding argument.
+ * the function don't affect the corresponding argument.
  */
 
 #include <stdio.h>

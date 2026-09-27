@@ -20,6 +20,6 @@
 
 ## Exercise 3
 
-If there’s a file named `file` in the current directory, the preprocessor will
+If there's a file named `file` in the current directory, the preprocessor will
 insert it into the current file rather than include the system header named
 `file`.
