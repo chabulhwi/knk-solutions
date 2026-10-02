@@ -58,19 +58,20 @@ We'll assume that the program has only one source file.
   `i`. If there is a local variable declared directly in `main`'s outermost
   block, none of the two parameters of `main` should be named `i`.
 
-Let `n` be the number of the local variables named `i`, which are declared
-inside (a) the body of the `main` function or (b) a nested block within `main`.
-Then, the program could contain at most `n + 2` different variables named `i`.
+Let `n` be the number of the blocks, each of which is either (a) the body of the
+`main` function or (b) a nested block within `main`. Then, the program could
+contain at most `n + 1` different variables named `i`.
 
-For example, the following C program contains one external variable, one
-function parameter of type `int`, and four local variables, all of which are
-named `i`.
+For example, the following C program contains one external variable and five
+local variables, all of which are named `i`.
 
 ```c
 int i;
 
-int main(int i, char *argv[i + 1])
+int main(void)
 {
+	int i;
+
 	{
 		int i;
 		{
