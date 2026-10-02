@@ -49,15 +49,12 @@
 ## Exercise 3
 
 * There can be at most one external variable `i`.
-* There can be at most one local variable `i` declared (a) inside the body of
-  the `main` function and (b) outside of any possible blocks that are also
-  inside the body of `main`.
-* There can be at most one local variable `i` declared inside every nested block
-  within the body of the `main` function.
+* There can be at most one local variable `i` declared inside (a) the body of
+  the `main` function or (b) a nested block within `main`.
 
-Let `n` be the number of the blocks that (a) are inside the body of the `main`
-function and (b) include a declaration of a local variable `i`. Then, the
-program could contain at most `n + 2` different variables named `i`.
+Let `n` be the number of the local variables named `i`, which are declared
+inside (a) the body of the `main` function or (b) a nested block within `main`.
+Then, the program could contain at most `n + 1` different variables named `i`.
 
 For example, the following C program contains one external variable and five
 local variables, all of which are named `i`.
