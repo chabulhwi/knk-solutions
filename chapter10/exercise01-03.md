@@ -55,7 +55,8 @@ We'll assume that the program has only one source file.
   either (a) the body of the `main` function or (b) a nested block within
   `main`.
 * The `main` function can have two parameters; only one of them can be named
-  `i`.
+  `i`. If there is a local variable declared directly in `main`'s outermost
+  block, none of the two parameters of `main` should be named `i`.
 
 Let `n` be the number of the local variables named `i`, which are declared
 inside (a) the body of the `main` function or (b) a nested block within `main`.
