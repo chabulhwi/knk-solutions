@@ -16,6 +16,8 @@ find . \( -name '*.c' -o -name '*.h' \) \
     -name 'exercise14.c' -o \
     -name 'exercise19.c' -o \
     -path "./chapter17/project04/line.c" \) \) \
+    ! \( -path "./chapter18/*" \
+    -name 'exercise04.c' \) \
     -exec indent \
     -nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce \
     -cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai \
